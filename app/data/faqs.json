@@ -1,0 +1,79 @@
+[
+  {
+    "id": "faq-1",
+    "category": "General hotel information",
+    "section": "Hotel policies",
+    "question": "How do I request an early check-in or late check-out with the hotel?",
+    "answer": "Early check-in and late check-out are subject to room availability at the time of your arrival or departure. Please verify availability with our front desk reception team on the day of your request. Azusa Rewards tier members may enjoy priority access options based on loyalty program terms."
+  },
+  {
+    "id": "faq-2",
+    "category": "General hotel information",
+    "section": "Hotel policies",
+    "question": "What is your policy regarding cancellations?",
+    "answer": "Cancellation policies vary based on the specific rate class, room tier, or booking conditions chosen during reservation confirmation. Standard flexible rates allow cancellations up to 24-48 hours before arrival without incurring penalty fees. Please double-check your booking voucher documentation for specific details."
+  },
+  {
+    "id": "faq-3",
+    "category": "General hotel information",
+    "section": "Hotel policies",
+    "question": "Will I be charged for extra guests occupying my room?",
+    "answer": "Room rates are structured based on specific occupant volumes configured during checkout workflows. Additional guests exceeding base configuration thresholds may incur extra occupancy fees to cover amenity provisions and breakfast services. Children under a certain age limit traveling with guardians stay free using existing bedding matrices."
+  },
+  {
+    "id": "faq-4",
+    "category": "General hotel information",
+    "section": "Hotel policies",
+    "question": "Is there a minimum age requirement to reserve a hotel room?",
+    "answer": "Guests must be at least 18 years of age to register and reserve a room standalone at Azusa Hotels and Apartments. Valid government-issued photo identification and a corresponding payment credit card profile are required upon front desk arrival procedures."
+  },
+  {
+    "id": "faq-5",
+    "category": "General hotel information",
+    "section": "Hotel policies",
+    "question": "Why does Azusa Hotels pre-authorize my credit card?",
+    "answer": "Pre-authorization guarantees room reservation security and creates a dynamic financial holding limit to cover potential room incidentals, restaurant dining charges, or boutique mall room service tabs incurred during your luxury stay. Holds automatically drop based on your local bank transaction processing cycle guidelines."
+  },
+  {
+    "id": "faq-6",
+    "category": "General hotel information",
+    "section": "Hotel policies",
+    "question": "Can Azusa Hotels supply a cot or crib for my room when I travel with children?",
+    "answer": "Yes, complimentary baby cots and structural infant crib configurations are available upon request. Please add a special requirement token string into your dynamic booking input widget or communicate directly with customer hotline support channels before your arrival date to ensure room setups."
+  },
+  {
+    "id": "faq-7",
+    "category": "General hotel information",
+    "section": "Hotel policies",
+    "question": "Who can I call if I want to speak to someone when visiting a Azusa Hotels and Apartments website?",
+    "answer": "You can reach our global continuous 24/7 client hotline customer support hub directly by dialing +234 916 068 3225 for immediate reservation management or customized service updates."
+  },
+  {
+    "id": "faq-8",
+    "category": "General hotel information",
+    "section": "Account and support",
+    "question": "How do I update my guest information online?",
+    "answer": "Log into your personalized Azusa Rewards member account interface profile page to dynamically modify contact coordinates, localized payment preferences, and default language settings instantly."
+  },
+  {
+    "id": "faq-9",
+    "category": "General hotel information",
+    "section": "Account and support",
+    "question": "Where can I find maps and directions to my hotel?",
+    "answer": "Detailed map markers, arrival instructions, and dynamic directions vectors pointing to Plot 1067, Mabushi District, Ahmadu Bello Way, Abuja are detailed cleanly within the footer segment and local Nearby Locations Explore page routing maps."
+  },
+  {
+    "id": "faq-10",
+    "category": "General hotel information",
+    "section": "Account and support",
+    "question": "Where can I find more about Voucher codes?",
+    "answer": "Voucher validation settings and programmatic promo code e-certs criteria can be tracked cleanly within your membership profile portal or by contacting account support directly."
+  },
+  {
+    "id": "faq-11",
+    "category": "General hotel information",
+    "section": "Account and support",
+    "question": "What's the best way to find the information I need?",
+    "answer": "Use our sitemap index, explore the segmented FAQ accordion categories tab rows, or connect directly with our centralized customer support phone hotline for assistance."
+  }
+]

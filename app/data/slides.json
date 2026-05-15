@@ -1,0 +1,30 @@
+[
+  {
+    "id": "slide-01",
+    "titleLight": "Azusa Hotel",
+    "titleBold": "Apartments",
+    "subtitle": "by Sonder-Living",
+    "ctaText": "Book Now",
+    "ctaHref": "/about-museum",
+    "bgImage": "/images/hero-bg.jpg",
+    "cards": [
+      { "id": "card-1", "title": "События", "subtitle": "и занятия", "image": "/images/hero-bg.jpg" },
+      { "id": "card-2", "title": "Подвалы", "subtitle": "XVII века", "image": "/images/hero-bg.jpg" },
+      { "id": "card-3", "title": "Уникальная", "subtitle": "в России", "image": "/images/hero-bg.jpg" }
+    ]
+  },
+  {
+    "id": "slide-02",
+    "titleLight": "African culture and hospitality",
+    "titleBold": "Experience",
+    "subtitle": "Traditions of taste through the depths of time",
+    "ctaText": "Exhibitions",
+    "ctaHref": "/exhibitions",
+    "bgImage": "/images/azusa2.jpg",
+    "cards": [
+      { "id": "card-4", "title": "Дегустация", "image": "/images/azusa2.jpg" },
+      { "id": "card-5", "title": "Мастер-классы", "image": "/images/azusa2.jpg" },
+      { "id": "card-6", "title": "Лавка чудес", "image": "/images/azusa2.jpg" }
+    ]
+  }
+]
