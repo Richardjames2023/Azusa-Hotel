@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import RoomCard, { RoomData } from "../../components/RoomCard";
+import RoomDetailModal from "../../components/RoomDetailModal";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -32,6 +34,8 @@ interface SubNavItem {
 }
 
 export default function RoomsPage() {
+  const [selectedRoom, setSelectedRoom] = useState<RoomData | null>(null);
+
   const subnavItems: SubNavItem[] = [
     { label: "Overview", href: "#", active: false },
     { label: "Rooms", href: "#", active: true },
@@ -46,9 +50,12 @@ export default function RoomsPage() {
     { label: "Contact", href: "#", active: false },
   ];
 
+  const dummyDesc = "These rooms offer ample space with stylish décor and relaxing tones that allow you to feel at ease. After a restful night's sleep on your plush mattress, wake up to a refreshing rain shower with thoughtful bathroom amenities. During your stay, appreciate picturesque skyline views of the city from the comfort of your room. Unwind in the evening with your preferred entertainment on the flat-screen TV. Keep connected with our free Wi-Fi and share memorable moments.";
+
   const rooms: RoomData[] = [
     {
       title: "Standard Room",
+      description: dummyDesc,
       images: ["/images/suite_main.png", "/images/suite_bed_side.png", "/images/suite_bed_front.png"],
       specs: ["23 m²", "2 adults", "1 king or 2 twin"],
       amenities: [
@@ -62,6 +69,7 @@ export default function RoomsPage() {
     },
     {
       title: "Standard Room - Skyline View",
+      description: dummyDesc,
       images: ["/images/suite_bed_side.png", "/images/suite_main.png", "/images/suite_bed_front.png"],
       specs: ["23 m²", "2 adults", "1 king or 2 twin"],
       amenities: [
@@ -75,6 +83,7 @@ export default function RoomsPage() {
     },
     {
       title: "Superior Room",
+      description: dummyDesc,
       images: ["/images/suite_bed_front.png", "/images/suite_bed_side.png", "/images/suite_main.png"],
       specs: ["27 m²", "3 adults", "1 king or 2 twin"],
       amenities: [
@@ -88,6 +97,7 @@ export default function RoomsPage() {
     },
     {
       title: "Superior Room - Skyline View",
+      description: dummyDesc,
       images: ["/images/suite_bed_side.png", "/images/suite_bed_front.png", "/images/suite_main.png"],
       specs: ["27 m²", "3 adults", "1 king or 2 twin"],
       amenities: [
@@ -101,6 +111,7 @@ export default function RoomsPage() {
     },
     {
       title: "Premium Room - Skyline and Park View",
+      description: dummyDesc,
       images: ["/images/suite_main.png", "/images/suite_bed_side.png", "/images/suite_bed_front.png"],
       specs: ["27 m²", "3 adults", "1 king or 2 twin"],
       amenities: [
@@ -114,6 +125,7 @@ export default function RoomsPage() {
     },
     {
       title: "Suite - Park View",
+      description: dummyDesc,
       images: ["/images/suite_bed_side.png", "/images/suite_main.png", "/images/suite_bed_front.png"],
       specs: ["42 m²", "3 adults", "1 king"],
       amenities: [
@@ -127,6 +139,7 @@ export default function RoomsPage() {
     },
     {
       title: "Suite - Skyline and Park View",
+      description: dummyDesc,
       images: ["/images/suite_bed_front.png", "/images/suite_bed_side.png", "/images/suite_main.png"],
       specs: ["42 m²", "3 adults", "1 king"],
       amenities: [
@@ -140,6 +153,7 @@ export default function RoomsPage() {
     },
     {
       title: "Family Stay - 2 Connected Rooms",
+      description: dummyDesc,
       images: ["/images/suite_bed_front.png", "/images/suite_main.png", "/images/suite_bed_side.png"],
       specs: ["50 m²", "4 adults", "1 king and 2 twin"],
       amenities: [
@@ -154,7 +168,7 @@ export default function RoomsPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-white w-full overflow-x-hidden">
+    <main className="min-h-screen bg-white w-full overflow-x-hidden relative">
       <Header />
 
       {/* Title Section */}
@@ -271,7 +285,11 @@ export default function RoomsPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
             {rooms.map((room, idx) => (
-              <RoomCard key={idx} room={room} />
+              <RoomCard
+                key={idx}
+                room={room}
+                onReadMore={() => setSelectedRoom(room)}
+              />
             ))}
           </div>
 
@@ -340,6 +358,13 @@ export default function RoomsPage() {
       </section>
 
       <Footer />
+
+      {/* Room detail modal */}
+      <RoomDetailModal
+        isOpen={!!selectedRoom}
+        room={selectedRoom}
+        onClose={() => setSelectedRoom(null)}
+      />
     </main>
   );
 }

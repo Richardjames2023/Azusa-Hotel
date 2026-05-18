@@ -12,6 +12,7 @@ export interface AmenityItem {
 
 export interface RoomData {
     title: string;
+    description?: string;
     images: string[];
     specs: string[];
     amenities: AmenityItem[];
@@ -19,9 +20,10 @@ export interface RoomData {
 
 interface RoomCardProps {
     room: RoomData;
+    onReadMore?: () => void;
 }
 
-export default function RoomCard({ room }: RoomCardProps) {
+export default function RoomCard({ room, onReadMore }: RoomCardProps) {
     const [currentIdx, setCurrentIdx] = useState<number>(0);
     const [isHovered, setIsHovered] = useState<boolean>(false);
 
@@ -121,13 +123,13 @@ export default function RoomCard({ room }: RoomCardProps) {
 
             {/* Card CTA Footer */}
             <div className="px-5 lg:p-6 pt-0 mt-auto">
-                <Link
-                    href="#"
-                    className="inline-flex items-center text-xs font-bold tracking-widest text-[#8b1e2f] uppercase hover:text-[#4a0a0c] transition-colors mb-5 group/link"
+                <button
+                    onClick={onReadMore}
+                    className="inline-flex items-center text-xs font-bold tracking-widest text-[#8b1e2f] uppercase hover:text-[#4a0a0c] transition-colors mb-5 group/link bg-transparent border-none p-0 cursor-pointer"
                 >
                     Read More
                     <span className="ml-1 transform group-hover/link:translate-x-1 transition-transform inline-block">➔</span>
-                </Link>
+                </button>
 
                 <button className="w-full bg-[#4a0a0c] hover:bg-[#300508] text-white py-3.5 px-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors duration-200">
                     Book Now
