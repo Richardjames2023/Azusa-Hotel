@@ -39,56 +39,60 @@ const BENEFITS_DATA: ExclusiveBenefit[] = [
 
 export const ExclusiveBenefitsSection: React.FC = () => {
   return (
-    <div className="w-full bg-[#F4F4F6] rounded-[40px] md:rounded-[60px] p-8 md:p-14 border border-gray-200/50 shadow-sm relative">
+
+    <div className="w-full bg-[#F4F4F6] rounded-none py-12 md:py-16 border border-gray-200/50 shadow-sm flex flex-col items-center relative">
       
-      {/* Upper Control Row Elements */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-3">
-        <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-stone-900">
-          Enjoy the exclusive benefits
-        </h2>
+      <div className="max-w-[1440px] mx-auto w-full px-6 md:px-12 lg:px-16 flex flex-col">
         
-        <div className="flex flex-wrap items-center gap-3">
-          <Link 
-            href="/benefits" 
-            className="inline-flex items-center justify-center border border-[#3B0E17] text-[#3B0E17] font-bold text-[11px] tracking-wider uppercase rounded-full px-6 py-2.5 hover:bg-stone-100 transition-all transform hover:-translate-y-0.5 duration-200 shadow-sm bg-white"
-          >
-            Discover More Benefits
-          </Link>
-          <Link 
-            href="/signup" 
-            className="inline-flex items-center justify-center bg-[#4A0A15] text-white font-bold text-[11px] tracking-widest uppercase rounded-full px-6 py-3 hover:bg-[#36070E] transition-all transform hover:-translate-y-0.5 duration-200 shadow-sm"
-          >
-            Become a Member
-          </Link>
-        </div>
-      </div>
+        {/* Upper Control Row Elements */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+          <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-stone-900">
+            Enjoy the exclusive benefits
+          </h2>
 
-      <p className="text-sm md:text-base font-bold text-gray-600 tracking-wide mb-10 max-w-5xl leading-relaxed">
-        As a Radisson Rewards member, you enjoy exclusive benefits. You collect points that you can use to enhance your travel experience or to pay for your booking. Join for free and elevate your stay!
-      </p>
-
-      {/* Perks Cards Layout Grid Matrix */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
-        {BENEFITS_DATA.map((benefit) => (
-          <div 
-            key={benefit.id}
-            className="bg-white border border-gray-100 rounded-2xl p-6 flex items-center space-x-5 shadow-sm transform transition-all duration-300 lg:hover:-translate-y-1.5 lg:hover:shadow-md"
-          >
-            {/* Visual Anchor Circle Icon Frame wrapper */}
-            <div className="w-12 h-12 rounded-full bg-stone-100 flex items-center justify-center flex-shrink-0 shadow-inner">
-              {benefit.iconSvg}
-            </div>
-            
-            <div className="flex flex-col space-y-1">
-              <h4 className="text-[15px] font-extrabold text-stone-900 tracking-tight leading-tight">
-                {benefit.title}
-              </h4>
-              <p className="text-xs md:text-[13px] font-bold text-gray-500 leading-relaxed tracking-wide">
-                {benefit.description}
-              </p>
-            </div>
+          <div className="flex flex-wrap items-center gap-3">
+            <Link 
+              href="/benefits" 
+              className="inline-flex items-center justify-center border border-[#3B0E17] text-[#3B0E17] font-bold text-[11px] tracking-wider uppercase rounded-full px-6 py-2.5 hover:bg-stone-100 transition-all transform hover:-translate-y-0.5 duration-200 shadow-sm bg-white"
+            >
+              Discover More Benefits
+            </Link>
+            <Link 
+              href="/signup" 
+              className="inline-flex items-center justify-center bg-[#4A0A15] text-white font-bold text-[11px] tracking-widest uppercase rounded-full px-6 py-3 hover:bg-[#36070E] transition-all transform hover:-translate-y-0.5 duration-200 shadow-sm"
+            >
+              Become a Member
+            </Link>
           </div>
-        ))}
+        </div>
+
+        <p className="text-sm md:text-base font-bold text-gray-600 tracking-wide mb-10 max-w-5xl leading-relaxed">
+          As a Radisson Rewards member, you enjoy exclusive benefits. You collect points that you can use to enhance your travel experience or to pay for your booking. Join for free and elevate your stay!
+        </p>
+
+        {/* Perks Cards Layout Grid Matrix */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+          {BENEFITS_DATA.map((benefit) => (
+            <div 
+              key={benefit.id}
+              className="bg-white border border-gray-100 rounded-2xl p-6 flex items-center space-x-5 shadow-sm transform transition-all duration-300 lg:hover:-translate-y-1.5 lg:hover:shadow-md"
+            >
+              <div className="w-12 h-12 rounded-full bg-stone-100 flex items-center justify-center flex-shrink-0 shadow-inner">
+                {benefit.iconSvg}
+              </div>
+              
+              <div className="flex flex-col space-y-1">
+                <h4 className="text-[15px] font-extrabold text-stone-900 tracking-tight leading-tight">
+                  {benefit.title}
+                </h4>
+                <p className="text-xs md:text-[13px] font-bold text-gray-500 leading-relaxed tracking-wide">
+                  {benefit.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
       </div>
 
     </div>

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "dest-1",
+    "title": "Discovery Museum",
+    "image": "/images/hero-bg.jpg",
+    "href": "/destinations/discovery-museum"
+  },
+  {
+    "id": "dest-2",
+    "title": "Magicland Park",
+    "image": "/images/azusa2.jpg",
+    "href": "/destinations/magicland-park"
+  },
+  {
+    "id": "dest-3",
+    "title": "Farm City",
+    "image": "/images/hero-bg.jpg",
+    "href": "/destinations/farm-city"
+  }
+]

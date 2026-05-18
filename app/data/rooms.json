@@ -10,10 +10,10 @@
     "pricePerNight": 240,
     "currency": "NGN",
     "features": [
-      { "label": "King Bed", "icon": "🛏️" },
-      { "label": "City View", "icon": "🏙️" },
-      { "label": "Free Wi-Fi", "icon": "📶" },
-      { "label": "Smart TV", "icon": "📺" }
+      { "label": "King Bed", "icon": "bed" },
+      { "label": "City View", "icon": "view" },
+      { "label": "Free Wi-Fi", "icon": "wifi" },
+      { "label": "Smart TV", "icon": "tv" }
     ],
     "href": "/rooms/executive-sovereign-suite",
     "delay": 0
@@ -29,10 +29,10 @@
     "pricePerNight": 390,
     "currency": "NGN",
     "features": [
-      { "label": "2 Bedrooms", "icon": "🔑" },
-      { "label": "Kitchenette", "icon": "🍳" },
-      { "label": "Balcony", "icon": "🌅" },
-      { "label": "Private Chef Opt.", "icon": "👨‍🍳" }
+      { "label": "2 Bedrooms", "icon": "key" },
+      { "label": "Kitchenette", "icon": "chef" },
+      { "label": "Balcony", "icon": "sunset" },
+      { "label": "Private Chef Opt.", "icon": "chef" }
     ],
     "href": "/rooms/premium-diplomatic-apartment",
     "delay": 2000
@@ -48,10 +48,10 @@
     "pricePerNight": 650,
     "currency": "NGN",
     "features": [
-      { "label": "Grand Terrace", "icon": "🏰" },
-      { "label": "Private Jacuzzi", "icon": "🛀" },
-      { "label": "24/7 Butler", "icon": "🤵" },
-      { "label": "Airport Transfer", "icon": "🚘" }
+      { "label": "Grand Terrace", "icon": "castle" },
+      { "label": "Private Jacuzzi", "icon": "bath" },
+      { "label": "24/7 Butler", "icon": "butler" },
+      { "label": "Airport Transfer", "icon": "car" }
     ],
     "href": "/rooms/signature-royal-penthouse",
     "delay": 4000
