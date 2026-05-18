@@ -1,0 +1,26 @@
+[
+  {
+    "id": "perk-01",
+    "title": "Complimentary Night Stay (Standard Room)",
+    "pointsRequired": 15000,
+    "category": "Stay",
+    "icon": "🏨",
+    "isAvailable": true
+  },
+  {
+    "id": "perk-02",
+    "title": "Signature Fine Dining Voucher",
+    "pointsRequired": 5000,
+    "category": "Dining",
+    "icon": "🍽️",
+    "isAvailable": true
+  },
+  {
+    "id": "perk-03",
+    "title": "Asymmetric Suite Upgrade Matrix Check",
+    "pointsRequired": 7500,
+    "category": "Upgrade",
+    "icon": "✨",
+    "isAvailable": false
+  }
+]

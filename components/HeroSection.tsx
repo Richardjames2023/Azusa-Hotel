@@ -16,7 +16,7 @@ export const HeroSection: React.FC = () => {
   const [isDesktop, setIsDesktop] = useState(false);
   const activeSlide = SLIDES_DATABASE[currentIdx];
 
-  //VIEWPORT BREAKPOINT CONFIGURATION CAPTURE HOOK
+  // VIEWPORT BREAKPOINT CONFIGURATION CAPTURE HOOK
   useEffect(() => {
     const checkViewportSize = () => {
       setIsDesktop(window.innerWidth >= 1024); // Matches Tailwind's standard 'lg' desktop breakpoint
@@ -45,29 +45,24 @@ export const HeroSection: React.FC = () => {
     return () => clearTimeout(timer);
   }, [currentIdx]);
 
-  //RESPONSIVE AUTOMATIC ROTATION INTERVAL ENGINE (Bypasses execution blocks cleanly on desktop screens)
   useEffect(() => {
-    if (isDesktop) return; // Completely skips creating the slide timer instance if current view scope matches desktop width
-
     const autoPlayTimer = setInterval(() => {
       if (!isAnimating) {
         setIsAnimating(true);
         setCurrentIdx((prev) => (prev + 1) % SLIDES_DATABASE.length);
       }
-    }, 5000);
+    }, 5000); // Rotates slides flawlessly every 5000ms (5 seconds)
 
     return () => clearInterval(autoPlayTimer);
-  }, [isAnimating, isDesktop]);
+  }, [isAnimating]);
 
   return (
-    <section className="w-full min-h-[780px] bg-[#1E110E] pb-10 relative overflow-hidden font-sans flex flex-col items-center">
+    <section className="w-full bg-[#1E110E] p-0 relative overflow-hidden font-sans flex flex-col items-center">
       
       {/* MAIN HERO STAGE CONTAINER */}
-      <div className="w-[100%] max-w-[1600px] h-[740px] rounded-b-[60px] md:rounded-b-[100px] relative overflow-hidden bg-stone-900 shadow-2xl group/stage">
+      <div className="w-full max-w-none h-[740px] rounded-none relative overflow-hidden bg-stone-900 shadow-2xl group/stage flex flex-col items-center">
         
-        {/* Absolute Multi-Layer Background Layer Elements */}
         <div className="absolute inset-0 z-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img 
             src={activeSlide.bgImage} 
             alt="Hero Background" 
@@ -78,7 +73,7 @@ export const HeroSection: React.FC = () => {
         </div>
 
         {/* CONTROLS AREA: Slide Counter Indicator Block */}
-        <div className="absolute bottom-16 left-8 md:left-16 z-30 flex items-center space-x-4">
+        <div className="absolute bottom-16 left-8 md:left-16 lg:left-24 z-30 flex items-center space-x-4">
           <span className="font-serif text-2xl font-semibold text-white/90 tracking-wide select-none">
             {String(currentIdx + 1).padStart(2, '0')}
           </span>
@@ -91,7 +86,7 @@ export const HeroSection: React.FC = () => {
         </div>
 
         {/* PRIMARY EDITORIAL LAYOUT CONTENT BLOCK */}
-        <div className="w-full h-full relative z-10 grid grid-cols-1 lg:grid-cols-12 items-center px-6 md:px-16 pt-12 pb-20 gap-8">
+        <div className="w-full max-w-[1440px] h-full relative z-10 grid grid-cols-1 lg:grid-cols-12 items-center px-6 md:px-12 lg:px-16 pt-12 pb-20 gap-8">
           
           {/* LEFT INTERACTIVE TRACK AREA: absolute cards preview rail slider */}
           <div className="lg:col-span-6 xl:col-span-5 flex items-end space-x-4 h-full pb-8 overflow-visible self-end">
@@ -125,11 +120,10 @@ export const HeroSection: React.FC = () => {
             ))}
           </div>
 
-          {/* CENTER CONTROLS FLUID NAVIGATION ANCHORS AREA */}
-          <div className="lg:col-span-1 hidden lg:flex flex-col items-center justify-end h-full pb-14 space-y-3">
+          <div className="lg:col-span-1 hidden lg:flex flex-col items-center justify-end h-full pb-14 space-y-3 lg:opacity-0 lg:group-hover/stage:opacity-100 transition-opacity duration-300">
             <button 
               onClick={handlePrevSlide}
-              className="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#D4AF37] hover:border-[#D4AF37] hover:text-black transition-all transform hover:scale-105 active:scale-95 bg-black/10 backdrop-blur-sm shadow-md"
+              className="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#D4AF37] hover:border-[#D4AF37] hover:text-black transition-all transform hover:scale-105 active:scale-95 bg-black/10 backdrop-blur-sm shadow-md cursor-pointer"
               aria-label="Previous Slide"
             >
               <svg className="w-4 h-4 transform rotate-180 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -138,7 +132,7 @@ export const HeroSection: React.FC = () => {
             </button>
             <button 
               onClick={handleNextSlide}
-              className="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#D4AF37] hover:border-[#D4AF37] hover:text-black transition-all transform hover:scale-105 active:scale-95 bg-black/10 backdrop-blur-sm shadow-md"
+              className="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#D4AF37] hover:border-[#D4AF37] hover:text-black transition-all transform hover:scale-105 active:scale-95 bg-black/10 backdrop-blur-sm shadow-md cursor-pointer"
               aria-label="Next Slide"
             >
               <svg className="w-4 h-4 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -172,7 +166,6 @@ export const HeroSection: React.FC = () => {
 
       </div>
 
-      {/* MOBILE SCREEN NAVIGATION POP CONTROLS */}
       <div className="flex lg:hidden items-center justify-center space-x-4 mt-6">
         <button 
           onClick={handlePrevSlide}

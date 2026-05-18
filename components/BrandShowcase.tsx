@@ -75,11 +75,10 @@ export const BrandShowcase: React.FC = () => {
 
   return (
     /* 
-      RESTRUCTURED BLOCK SHEET
-      The parent outer section shell layout wrapper padding values have been dropped 
-      and background parameters synchronized into a standalone stacked layout panel element.
+      PARENT OUTER STORAGE CONTAINER 
+      Enforces flat rounded-none edges to support your stacking container layouts cleanly
     */
-    <div className="w-full bg-[#F4F4F6] rounded-[40px] md:rounded-[60px] p-8 md:p-14 flex flex-col space-y-12 border border-gray-200/50">
+    <div className="w-full bg-[#F4F4F6] rounded-none p-8 md:p-14 flex flex-col space-y-12 border border-gray-200/50">
       
       {brandData.map((group, gIdx) => (
         <div key={gIdx} className="w-full flex flex-col items-center text-center">

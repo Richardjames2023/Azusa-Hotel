@@ -4,36 +4,13 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FacilityItem } from '../app/types/facilities';
 
+// Import editorial stars icon to style the highlights matrix cleanly
+import { LuSparkles } from 'react-icons/lu';
 
-const FACILITIES_DATA: FacilityItem[] = [
-  {
-    id: "fac-1",
-    title: "Experience modern comfort",
-    tagline: "CHIC ACCOMMODATIONS & LOCAL FLAVORS",
-    description: "Plan your next getaway to the vibrant city of Abuja and make Azusa, Abuja your ultimate destination! With its chic accommodations, exceptional dining experiences infused with local flavors, and state-of-the-art amenities, our hotel invites you to immerse yourself in a world of indulgence and relaxation.",
-    image: "/images/hero-bg.jpg", 
-    ctaHref: "/facilities/dining",
-    highlights: ["Local Flavors", "Chic Accommodations", "Fine Wine Cellar"]
-  },
-  {
-    id: "fac-2",
-    title: "Signature Wellness Spa",
-    tagline: "REVITALIZE YOUR MIND & BODY",
-    description: "Indulge in tailored therapeutic massages, premium organic skincare treatments, and holistic wellness sessions designed entirely to restore clarity and balance. Complete with steam therapy paths and quiet ambient lounges, your ultimate rejuvenation awaits.",
-    image: "/images/azusa2.jpg",
-    ctaHref: "/facilities/spa",
-    highlights: ["Organic Skincare", "Therapeutic Massage", "Steam Therapy"]
-  },
-  {
-    id: "fac-3",
-    title: "The Panoramic Sky Lounge",
-    tagline: "ELEVATED ROOFTOP MIXOLOGY",
-    description: "Take in sweeping city skylines from our high-end rooftop destination. Sip handcrafted custom cocktails, sample globally inspired tapas plates, and relax in an ambient interior configuration tailored perfectly for networking, late evenings, or intimate escapes.",
-    image: "/images/hero-bg.jpg",
-    ctaHref: "/facilities/lounge",
-    highlights: ["Handcrafted Cocktails", "Panoramic Views", "Premium Tapas"]
-  }
-];
+// CHORE: Decoupled hardcoded arrays cleanly into native JSON static imports
+import FACILITIES_JSON from '../app/data/facilities.json';
+
+const FACILITIES_DATA = FACILITIES_JSON as FacilityItem[];
 
 export const FacilitiesShowcase: React.FC = () => {
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -46,50 +23,51 @@ export const FacilitiesShowcase: React.FC = () => {
     setCurrentIdx(targetIdx);
   };
 
-  // 1. HARDWARE-ACCELERATED TIMEOUT: Resets the cross-fade state blocks safely
   useEffect(() => {
     const animTimer = setTimeout(() => setIsAnimating(false), 800);
     return () => clearTimeout(animTimer);
   }, [currentIdx]);
 
-  // 2. BACKGROUND LOOP INTERVAL: Auto-advances items seamlessly every 5 seconds
   useEffect(() => {
     const autoSlideTimer = setInterval(() => {
       if (!isAnimating) {
         setIsAnimating(true);
         setCurrentIdx((prev) => (prev + 1) % FACILITIES_DATA.length);
       }
-    }, 5000);
+    }, 6000);
 
     return () => clearInterval(autoSlideTimer);
   }, [isAnimating]);
 
   return (
-    <section className="w-full bg-[#1E110E] px-4 md:px-8 pb-24 pt-6 font-sans flex flex-col items-center">
+    <section className="w-full bg-[#FCFBF9] py-12 md:py-16 font-sans flex flex-col items-center relative z-10 overflow-hidden">
       
-      {/* Outer Premium Shelf Housing Card Container */}
-      <div className="w-full max-w-[1600px] bg-white rounded-br-[60px] md:rounded-br-[100px] p-8 md:p-16 shadow-2xl overflow-hidden relative">
+      <div className="w-full max-w-[1440px] px-6 md:px-12 lg:px-16 relative">
         
-        {/* Main Grid Content Partition Matrix Split */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        {/* Main Layout Split Grid Framework */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch min-h-[500px]">
           
-          {/* LEFT INTERACTIVE COLUMN BLOCK: Asymmetric Curved Picture Frame */}
-          <div className="lg:col-span-6 relative h-[360px] md:h-[460px] w-full rounded-[30px] md:rounded-[40px] overflow-hidden bg-stone-100 group shadow-lg">
+          {/* 
+            LEFT PANEL: Cinematic Image Slideshow Frame
+            UPDATED: Added 'rounded-2xl' and 'isolate' to smoothly clip the sliding image corners
+          */}
+          <div className="lg:col-span-6 relative h-[360px] md:h-[480px] lg:h-auto w-full bg-stone-900 group overflow-hidden z-10 shadow-lg rounded-2xl isolate">
             
             {FACILITIES_DATA.map((item, index) => (
               <div 
                 key={item.id}
-                className={`absolute inset-0 transition-all duration-[1000ms] ease-in-out ${
+                /* UPDATED: Added 'rounded-2xl' and 'transform-gpu' straight to transition targets */
+                className={`absolute inset-0 transition-all duration-[1200ms] cubic-bezier(0.4, 0, 0.2, 1) rounded-2xl transform-gpu ${
                   index === currentIdx 
-                    ? 'opacity-100 scale-100 z-10' 
-                    : 'opacity-0 scale-105 pointer-events-none z-0'
+                    ? 'opacity-100 scale-100 z-10 filter brightness-[0.85]' 
+                    : 'opacity-0 scale-105 pointer-events-none z-0 filter brightness-50'
                 }`}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src={item.image} 
                   alt={item.title} 
-                  className="w-full h-full object-cover object-center filter brightness-[0.95]"
+                  className="w-full h-full object-cover object-center rounded-2xl"
                   onError={(e) => {
                     const img = e.target as HTMLImageElement;
                     img.onerror = null;
@@ -99,60 +77,74 @@ export const FacilitiesShowcase: React.FC = () => {
               </div>
             ))}
 
-            {/* Micro Interaction Bottom Bar Indicators */}
-            <div className="absolute bottom-6 right-6 z-20 flex space-x-2 bg-black/20 backdrop-blur-md px-3 py-2 rounded-full border border-white/10">
-              {FACILITIES_DATA.map((_, dotIdx) => (
-                <button
-                  key={dotIdx}
-                  onClick={() => handleSlideChange(dotIdx)}
-                  className={`h-2 rounded-full transition-all duration-300 focus:outline-none ${
-                    dotIdx === currentIdx ? 'bg-white w-5' : 'bg-white/40 hover:bg-white/60 w-2'
-                  }`}
-                  aria-label={`Go to slide ${dotIdx + 1}`}
-                />
-              ))}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent z-20 pointer-events-none rounded-2xl" />
+
+            {/* Micro Indicator Tracking Linear Progress Bars - Styled with matching micro-rounding */}
+            <div className="absolute bottom-6 left-6 z-30 flex items-center space-x-3 bg-black/40 backdrop-blur-md px-3 py-2.5 border border-white/10 rounded-xl">
+              <span className="text-white/80 font-serif text-xs font-semibold select-none">
+                {String(currentIdx + 1).padStart(2, '0')}
+              </span>
+              <div className="flex space-x-1.5">
+                {FACILITIES_DATA.map((_, dotIdx) => (
+                  <button
+                    key={dotIdx}
+                    onClick={() => handleSlideChange(dotIdx)}
+                    className={`h-1 rounded-full transition-all duration-500 ease-out focus:outline-none ${
+                      dotIdx === currentIdx ? 'bg-[#D4AF37] w-6' : 'bg-white/30 hover:bg-white/60 w-2'
+                    }`}
+                    aria-label={`Go to slide ${dotIdx + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* RIGHT EDITORIAL TYPOGRAPHY DETAILS COLUMN SECTION PANEL */}
-          <div className="lg:col-span-6 flex flex-col justify-center items-start lg:pl-4">
+          {/* RIGHT PANEL: Editorial Typography Sheet - Styled with soft inner card curves to match visual weight */}
+          <div className="lg:col-span-6 flex flex-col justify-center items-start p-6 md:p-10 lg:p-12 xl:p-14 bg-white border border-gray-100 shadow-xs relative z-20 rounded-2xl">
             
-            <div className={`w-full transform transition-all duration-700 ease-out ${
-              isAnimating ? 'opacity-0 translate-x-8 scale-[0.99]' : 'opacity-100 translate-x-0 scale-100'
+            <div className={`w-full transform transition-all duration-700 cubic-bezier(0.34, 1.56, 0.64, 1) ${
+              isAnimating ? 'opacity-0 translate-x-12' : 'opacity-100 translate-x-0'
             }`}>
-              {/* Dynamic Context Tag Subtitle Line */}
-              <span className="text-[11px] font-extrabold text-[#4A0A15] tracking-[0.25em] uppercase block mb-3 pl-0.5">
-                {activeFacility.tagline}
-              </span>
+              
+              {/* Tagline Badge with line accent */}
+              <div className="flex flex-col mb-4">
+                <span className="text-[10px] font-extrabold text-[#4A0A15] tracking-[0.25em] uppercase block pl-0.5">
+                  {activeFacility.tagline}
+                </span>
+                <div className="w-12 h-[2px] bg-[#D4AF37] mt-2.5 ml-0.5" />
+              </div>
 
-              {/* Massive Main Editorial Title Heading */}
-              <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold font-serif text-stone-900 leading-[1.1] tracking-tight mb-5">
+              {/* Serif Title Heading */}
+              <h2 className="text-2xl md:text-3xl xl:text-4xl font-normal font-serif text-stone-900 leading-[1.15] tracking-tight mb-5">
                 {activeFacility.title}
               </h2>
 
-              {/* Multi-sentence Descriptive Paragraph Block Text */}
-              <p className="text-gray-600 text-[14px] md:text-base font-medium leading-relaxed tracking-wide mb-8 max-w-xl">
+              {/* Rich Body Paragraph */}
+              <p className="text-stone-600 text-xs md:text-sm font-medium leading-relaxed tracking-wide mb-6 border-l-2 border-stone-200 pl-4 max-w-xl">
                 {activeFacility.description}
               </p>
 
-              {/* Dynamic Feature Checklist Pills Container */}
-              <div className="flex flex-wrap gap-2 mb-8 max-w-xl">
+              {/* Highlights Micro-Cards Layout Matrix - Styled with rounded-xl profile layers */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 w-full max-w-xl">
                 {activeFacility.highlights.map((highlight, hIdx) => (
-                  <span 
+                  <div 
                     key={hIdx}
-                    className="bg-stone-50 border border-stone-200/60 text-stone-600 text-[11px] font-bold tracking-wide uppercase px-3.5 py-1.5 rounded-md shadow-xs"
+                    className="flex items-center space-x-3 bg-stone-50/60 border border-stone-200/40 p-2.5 shadow-[0_1px_3px_rgba(0,0,0,0.01)] rounded-xl"
                   >
-                    ✦ {highlight}
-                  </span>
+                    <LuSparkles className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" />
+                    <span className="text-stone-800 text-[11px] font-bold tracking-wide uppercase">
+                      {highlight}
+                    </span>
+                  </div>
                 ))}
               </div>
 
-              {/* Clean Maroon CTA Pill Link */}
+              {/* Action Call-To-Action Button - Styled as a clean rounded pill shape */}
               <Link 
                 href={activeFacility.ctaHref}
-                className="inline-flex items-center justify-center bg-[#4A0A15] text-white font-extrabold text-xs px-9 py-4 rounded-full shadow-lg hover:bg-[#36070E] hover:shadow-xl transition-all transform active:scale-95 duration-200 uppercase tracking-widest border border-transparent"
+                className="inline-flex items-center justify-center bg-[#4A0A15] text-white font-extrabold text-xs px-10 py-3.5 shadow-md hover:bg-[#36070E] hover:shadow-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0 duration-200 uppercase tracking-widest min-w-[180px] rounded-full"
               >
-                Discover More
+                <span>Discover More</span>
               </Link>
             </div>
 
