@@ -4,10 +4,14 @@
     "title": "The Ultimate Weekend Escape",
     "tagline": "EXCLUSIVE RETREAT PACKAGE",
     "description": "Indulge in a luxurious weekend stay at Azusa. Enjoy 25% off our premium rooms, complimentary signature cocktails at the lounge, and an extended late check-out till 4:00 PM.",
-    "image": "/images/hero-bg.jpg",
+    "image": "/images/A13.webp",
     "discountPercentage": 25,
     "validUntil": "Valid until Dec 31, 2026",
-    "features": ["25% Discount Included", "Complimentary Cocktails", "Late Check-out Guarantee"],
+    "features": [
+      "25% Discount Included",
+      "Complimentary Cocktails",
+      "Late Check-out Guarantee"
+    ],
     "ctaHref": "/bookings?promo=weekend25",
     "badgeText": "Limited Offer"
   },
@@ -18,7 +22,11 @@
     "description": "Combine productivity with absolute luxury. Book a consecutive 3-night stay in our Executive Suite and unlock premium high-speed dedicated Wi-Fi network routing, complimentary meeting room access, and entry to our Signature Wellness Spa paths.",
     "image": "/images/suite_main.png",
     "validUntil": "Valid year-round",
-    "features": ["Free Meeting Space Access", "Daily Spa Entry Credits", "High-Speed Network Route"],
+    "features": [
+      "Free Meeting Space Access",
+      "Daily Spa Entry Credits",
+      "High-Speed Network Route"
+    ],
     "ctaHref": "/bookings?promo=workation",
     "badgeText": "Business Premium"
   }

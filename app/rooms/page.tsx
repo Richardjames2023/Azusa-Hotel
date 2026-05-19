@@ -67,7 +67,7 @@ export default function RoomsPage() {
     {
       title: "Standard Room",
       description: dummyDesc,
-      images: ["/images/suite_main.png", "/images/suite_bed_side.png", "/images/suite_bed_front.png"],
+      images: ["/img/A15.webp", "/img/A16.webp", "/img/A17.webp"],
       specs: ["23 m²", "2 adults", "1 king or 2 twin"],
       amenities: [
         { icon: LuSnowflake, label: "Air Conditioning" },
@@ -81,7 +81,7 @@ export default function RoomsPage() {
     {
       title: "Standard Room - Skyline View",
       description: dummyDesc,
-      images: ["/images/suite_bed_side.png", "/images/suite_main.png", "/images/suite_bed_front.png"],
+      images: ["/img/A18.webp", "/img/A16.webp", "/img/A17.webp"],
       specs: ["23 m²", "2 adults", "1 king or 2 twin"],
       amenities: [
         { icon: FaDroplet, label: "Complimentary Water" },
@@ -95,7 +95,7 @@ export default function RoomsPage() {
     {
       title: "Superior Room",
       description: dummyDesc,
-      images: ["/images/suite_bed_front.png", "/images/suite_bed_side.png", "/images/suite_main.png"],
+      images: ["/img/A6.webp", "/img/A7.webp", "/img/A8.webp"],
       specs: ["27 m²", "3 adults", "1 king or 2 twin"],
       amenities: [
         { icon: LuSnowflake, label: "Air Conditioning" },
@@ -109,7 +109,7 @@ export default function RoomsPage() {
     {
       title: "Superior Room - Skyline View",
       description: dummyDesc,
-      images: ["/images/suite_bed_side.png", "/images/suite_bed_front.png", "/images/suite_main.png"],
+      images: ["/img/A1.webp", "/img/A2.webp", "/img/A3.webp"],
       specs: ["27 m²", "3 adults", "1 king or 2 twin"],
       amenities: [
         { icon: FaWheelchair, label: "Accessible Room" },
@@ -123,7 +123,7 @@ export default function RoomsPage() {
     {
       title: "Premium Room - Skyline and Park View",
       description: dummyDesc,
-      images: ["/images/suite_main.png", "/images/suite_bed_side.png", "/images/suite_bed_front.png"],
+      images: ["/img/A3.webp", "/img/A4.webp", "/img/A6.webp"],
       specs: ["27 m²", "3 adults", "1 king or 2 twin"],
       amenities: [
         { icon: LuSnowflake, label: "Air Conditioning" },
@@ -137,7 +137,7 @@ export default function RoomsPage() {
     {
       title: "Suite - Park View",
       description: dummyDesc,
-      images: ["/images/suite_bed_side.png", "/images/suite_main.png", "/images/suite_bed_front.png"],
+      images: ["/img/A5.webp", "/img/A6.webp", "/img/A7.webp"],
       specs: ["42 m²", "3 adults", "1 king"],
       amenities: [
         { icon: LuSnowflake, label: "Air Conditioning" },
@@ -151,7 +151,7 @@ export default function RoomsPage() {
     {
       title: "Suite - Skyline and Park View",
       description: dummyDesc,
-      images: ["/images/suite_bed_front.png", "/images/suite_bed_side.png", "/images/suite_main.png"],
+      images: ["/img/A15.webp", "/img/A16.webp", "/img/A17.webp"],
       specs: ["42 m²", "3 adults", "1 king"],
       amenities: [
         { icon: LuWifi, label: "High-Speed Wi-Fi" },
@@ -165,7 +165,7 @@ export default function RoomsPage() {
     {
       title: "Family Stay - 2 Connected Rooms",
       description: dummyDesc,
-      images: ["/images/suite_bed_front.png", "/images/suite_main.png", "/images/suite_bed_side.png"],
+      images: ["/img/A7.webp", "/img/A8.webp", "/img/A6.webp"],
       specs: ["50 m²", "4 adults", "1 king and 2 twin"],
       amenities: [
         { icon: LuBaby, label: "Family Friendly" },
@@ -196,7 +196,7 @@ export default function RoomsPage() {
         <div className="w-full lg:col-span-3 grid grid-cols-2 grid-rows-2 gap-1 h-[400px] md:h-[500px] lg:h-[600px]">
           <div className="relative row-span-2 col-span-1 h-full w-full bg-gray-200 overflow-hidden group cursor-pointer">
             <Image
-              src="/images/suite_main.png"
+              src="/img/A16.webp"
               alt="Azusa Premier Royal Suite Main"
               fill
               className="object-cover scale-110 group-hover:scale-100 transition-transform duration-700 ease-out"
@@ -206,7 +206,7 @@ export default function RoomsPage() {
           </div>
           <div className="relative row-span-1 col-span-1 h-full w-full bg-gray-200 overflow-hidden group cursor-pointer">
             <Image
-              src="/images/suite_bed_side.png"
+              src="/img/A8.webp"
               alt="Suite Bed View Side"
               fill
               className="object-cover scale-110 group-hover:scale-100 transition-transform duration-700 ease-out"
@@ -215,7 +215,7 @@ export default function RoomsPage() {
           </div>
           <div className="relative row-span-1 col-span-1 h-full w-full bg-gray-200 overflow-hidden group cursor-pointer">
             <Image
-              src="/images/suite_bed_front.png"
+              src="/img/A7.webp"
               alt="Suite Bed View Front"
               fill
               className="object-cover scale-110 group-hover:scale-100 transition-transform duration-700 ease-out"
@@ -294,7 +294,7 @@ export default function RoomsPage() {
       </section>
 
       <Footer />
-      
+
       {/* {MOdal popup} */}
       <RoomDetailModal
         isOpen={isModalOpen}

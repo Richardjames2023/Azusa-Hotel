@@ -10,67 +10,77 @@ import { RoomData } from "./RoomCard";
 import { BookingFormModal } from "./booking/BookingFormModal";
 
 interface RoomDetailModalProps {
-    isOpen: boolean;
-    onClose: () => void;
-    room: RoomSuite | RoomData | null; // Accepts either structural format safely
+  isOpen: boolean;
+  onClose: () => void;
+  room: RoomSuite | RoomData | null;
 }
 
 export default function RoomDetailModal({ isOpen, onClose, room }: RoomDetailModalProps) {
-    const [currentImgIdx, setCurrentImgIdx] = useState(0);
-    
-    // CONTROL STATE FOR THE OVERLAY SECURE FORM
-    const [isCheckoutOpen, setIsCheckoutOpen] = useState<boolean>(false);
+  const [currentImgIdx, setCurrentImgIdx] = useState(0);
 
-    useEffect(() => {
-        if (isOpen) {
-            setCurrentImgIdx(0);
-            setIsCheckoutOpen(false); // Reset checkout state when main modal opens
-        }
-    }, [isOpen, room]);
+  // CONTROL STATE FOR THE OVERLAY SECURE FORM
+  const [isCheckoutOpen, setIsCheckoutOpen] = useState<boolean>(false);
 
-    useEffect(() => {
-        const handleKeyDown = (e: KeyboardEvent) => {
-            if (e.key === "Escape") {
-                if (isCheckoutOpen) {
-                    setIsCheckoutOpen(false);
-                } else {
-                    onClose();
-                }
-            }
-        };
-        if (isOpen) window.addEventListener("keydown", handleKeyDown);
-        return () => window.removeEventListener("keydown", handleKeyDown);
-    }, [isOpen, isCheckoutOpen, onClose]);
+  useEffect(() => {
+    if (isOpen) {
+      setCurrentImgIdx(0);
+      setIsCheckoutOpen(false);
+    }
+  }, [isOpen, room]);
 
-    useEffect(() => {
-        // Manage background scrolling behavior when either modal layer is active
-        if (isOpen || isCheckoutOpen) {
-            document.body.style.overflow = "hidden";
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        if (isCheckoutOpen) {
+          setIsCheckoutOpen(false);
         } else {
-            document.body.style.overflow = "unset";
+          onClose();
         }
-        return () => { document.body.style.overflow = "unset"; };
-    }, [isOpen, isCheckoutOpen]);
-
-    if (!isOpen || !room) return null;
-
-    // SAFE ARRAY MAPPING CONFIGURATION BIND
-    const roomImages = room.images || [];
-
-    const nextImg = () => {
-        setCurrentImgIdx((prev) => (prev === roomImages.length - 1 ? 0 : prev + 1));
+      }
     };
+    if (isOpen) window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, isCheckoutOpen, onClose]);
 
-    const prevImg = () => {
-        setCurrentImgIdx((prev) => (prev === 0 ? roomImages.length - 1 : prev - 1));
+  useEffect(() => {
+    if (isOpen || isCheckoutOpen) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     };
+  }, [isOpen, isCheckoutOpen]);
 
-    // Smart detector verifying if the features array uses string tags or native icon objects
-    const amenitiesList = 'features' in room ? room.features : room.amenities;
+  if (!isOpen || !room) return null;
 
-    // Safely extract pricing variables from the union types with smart default fallbacks
-    const dynamicPrice = 'pricePerNight' in room ? room.pricePerNight : 180000;
-    const dynamicCurrency = 'currency' in room ? room.currency : 'NGN';
+  // SAFE ARRAY MAPPING CONFIGURATION BIND
+  const roomImages = room.images || [];
+
+  const nextImg = () => {
+    setCurrentImgIdx((prev) => (prev === roomImages.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevImg = () => {
+    setCurrentImgIdx((prev) => (prev === 0 ? roomImages.length - 1 : prev - 1));
+  };
+
+  // Smart detector verifying if the features array uses string tags or native icon objects
+  const amenitiesList = 'features' in room ? room.features : room.amenities;
+
+  // Safely extract pricing variables from the union types with smart default fallbacks
+  const dynamicPrice = 'pricePerNight' in room ? room.pricePerNight : 180000;
+  const dynamicCurrency = 'currency' in room ? room.currency : 'NGN';
+
+  // Safely extract specifications based on the union type structure
+  const specsList = 'specs' in room ? room.specs : [room.size, room.occupancy];
+
+  // Safely extract description from the union types
+  const roomDescription = 'description' in room ? room.description : undefined;
 
   return (
     <>
@@ -111,10 +121,10 @@ export default function RoomDetailModal({ isOpen, onClose, room }: RoomDetailMod
                 </button>
               </div>
 
-              <div className="overflow-y-auto max-h-[280px] md:max-h-[350px] pr-2 custom-scrollbar flex flex-col gap-5">
-                {room.specs && room.specs.length > 0 && (
+              <div className="overflow-y-auto overscroll-contain max-h-[280px] md:max-h-[350px] pr-2 custom-scrollbar flex flex-col gap-5">
+                {specsList && specsList.length > 0 && (
                   <div className="flex flex-wrap gap-2">
-                    {room.specs.map((spec, sIdx) => (
+                    {specsList.map((spec, sIdx) => (
                       <span
                         key={sIdx}
                         className="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full border border-gray-200/60 font-medium"
@@ -126,7 +136,7 @@ export default function RoomDetailModal({ isOpen, onClose, room }: RoomDetailMod
                 )}
 
                 <p className="text-sm text-gray-600 leading-relaxed font-normal">
-                  {room.description ||
+                  {roomDescription ||
                     "Indulge in tailored therapeutic comfort and sophisticated layout designs, perfectly structured for relaxation."}
                 </p>
 
@@ -171,7 +181,7 @@ export default function RoomDetailModal({ isOpen, onClose, room }: RoomDetailMod
                 onClick={prevImg}
                 className="w-9 h-9 rounded-full border border-gray-300 flex items-center justify-center text-gray-700 hover:bg-gray-50 transition-colors"
               >
-                <LuChevronLeft className="w-5 h-5 stroke-" />
+                <LuChevronLeft className="w-5 h-5 stroke-[2]" />
               </button>
               <span className="text-sm font-medium text-gray-800 select-none tracking-wide">
                 {currentImgIdx + 1}/{roomImages.length}
@@ -180,7 +190,7 @@ export default function RoomDetailModal({ isOpen, onClose, room }: RoomDetailMod
                 onClick={nextImg}
                 className="w-9 h-9 rounded-full border border-gray-300 flex items-center justify-center text-gray-700 hover:bg-gray-50 transition-colors"
               >
-                <LuChevronRight className="w-5 h-5 stroke-" />
+                <LuChevronRight className="w-5 h-5 stroke-[2]" />
               </button>
             </div>
 
@@ -197,10 +207,7 @@ export default function RoomDetailModal({ isOpen, onClose, room }: RoomDetailMod
         </div>
       </div>
 
-      {/* 
-        NESTED PRODUCTION-GRADE SECURE CHECKOUT LAYER FORM MODAL 
-        Invokes dynamically over the presentation layout view cleanly
-      */}
+
       <BookingFormModal
         isOpen={isCheckoutOpen}
         onClose={() => setIsCheckoutOpen(false)}
