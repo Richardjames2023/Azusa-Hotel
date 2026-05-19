@@ -7,7 +7,6 @@ import { FacilityItem } from '../app/types/facilities';
 // Import editorial stars icon to style the highlights matrix cleanly
 import { LuSparkles } from 'react-icons/lu';
 
-// CHORE: Decoupled hardcoded arrays cleanly into native JSON static imports
 import FACILITIES_JSON from '../app/data/facilities.json';
 
 const FACILITIES_DATA = FACILITIES_JSON as FacilityItem[];
@@ -44,13 +43,8 @@ export const FacilitiesShowcase: React.FC = () => {
       
       <div className="w-full max-w-[1440px] px-6 md:px-12 lg:px-16 relative">
         
-        {/* Main Layout Split Grid Framework */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch min-h-[500px]">
           
-          {/* 
-            LEFT PANEL: Cinematic Image Slideshow Frame
-            UPDATED: Added 'rounded-2xl' and 'isolate' to smoothly clip the sliding image corners
-          */}
           <div className="lg:col-span-6 relative h-[360px] md:h-[480px] lg:h-auto w-full bg-stone-900 group overflow-hidden z-10 shadow-lg rounded-2xl isolate">
             
             {FACILITIES_DATA.map((item, index) => (
@@ -79,7 +73,6 @@ export const FacilitiesShowcase: React.FC = () => {
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent z-20 pointer-events-none rounded-2xl" />
 
-            {/* Micro Indicator Tracking Linear Progress Bars - Styled with matching micro-rounding */}
             <div className="absolute bottom-6 left-6 z-30 flex items-center space-x-3 bg-black/40 backdrop-blur-md px-3 py-2.5 border border-white/10 rounded-xl">
               <span className="text-white/80 font-serif text-xs font-semibold select-none">
                 {String(currentIdx + 1).padStart(2, '0')}
@@ -99,14 +92,12 @@ export const FacilitiesShowcase: React.FC = () => {
             </div>
           </div>
 
-          {/* RIGHT PANEL: Editorial Typography Sheet - Styled with soft inner card curves to match visual weight */}
           <div className="lg:col-span-6 flex flex-col justify-center items-start p-6 md:p-10 lg:p-12 xl:p-14 bg-white border border-gray-100 shadow-xs relative z-20 rounded-2xl">
             
             <div className={`w-full transform transition-all duration-700 cubic-bezier(0.34, 1.56, 0.64, 1) ${
               isAnimating ? 'opacity-0 translate-x-12' : 'opacity-100 translate-x-0'
             }`}>
               
-              {/* Tagline Badge with line accent */}
               <div className="flex flex-col mb-4">
                 <span className="text-[10px] font-extrabold text-[#4A0A15] tracking-[0.25em] uppercase block pl-0.5">
                   {activeFacility.tagline}
@@ -114,17 +105,14 @@ export const FacilitiesShowcase: React.FC = () => {
                 <div className="w-12 h-[2px] bg-[#D4AF37] mt-2.5 ml-0.5" />
               </div>
 
-              {/* Serif Title Heading */}
               <h2 className="text-2xl md:text-3xl xl:text-4xl font-normal font-serif text-stone-900 leading-[1.15] tracking-tight mb-5">
                 {activeFacility.title}
               </h2>
 
-              {/* Rich Body Paragraph */}
               <p className="text-stone-600 text-xs md:text-sm font-medium leading-relaxed tracking-wide mb-6 border-l-2 border-stone-200 pl-4 max-w-xl">
                 {activeFacility.description}
               </p>
 
-              {/* Highlights Micro-Cards Layout Matrix - Styled with rounded-xl profile layers */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 w-full max-w-xl">
                 {activeFacility.highlights.map((highlight, hIdx) => (
                   <div 
@@ -139,7 +127,6 @@ export const FacilitiesShowcase: React.FC = () => {
                 ))}
               </div>
 
-              {/* Action Call-To-Action Button - Styled as a clean rounded pill shape */}
               <Link 
                 href={activeFacility.ctaHref}
                 className="inline-flex items-center justify-center bg-[#4A0A15] text-white font-extrabold text-xs px-10 py-3.5 shadow-md hover:bg-[#36070E] hover:shadow-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0 duration-200 uppercase tracking-widest min-w-[180px] rounded-full"

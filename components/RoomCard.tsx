@@ -50,8 +50,9 @@ export default function RoomCard({ room, onReadMore }: RoomCardProps) {
                     {room.images.map((imgSrc, index) => (
                         <div
                             key={index}
-                            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${index === currentIdx ? "opacity-100 z-10" : "opacity-0 z-0"
-                                }`}
+                            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                                index === currentIdx ? "opacity-100 z-10" : "opacity-0 z-0"
+                            }`}
                         >
                             <Image
                                 src={imgSrc}
@@ -72,8 +73,9 @@ export default function RoomCard({ room, onReadMore }: RoomCardProps) {
                                     e.stopPropagation();
                                     setCurrentIdx(index);
                                 }}
-                                className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${index === currentIdx ? "bg-white w-3" : "bg-white/50"
-                                    }`}
+                                className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                                    index === currentIdx ? "bg-white w-3" : "bg-white/50"
+                                }`}
                                 aria-label={`Go to slide ${index + 1}`}
                             />
                         ))}

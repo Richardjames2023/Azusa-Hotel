@@ -3,17 +3,33 @@
     "id": "room-01",
     "title": "Executive Sovereign Suite",
     "category": "Luxury Suites",
-    "image": "/images/hero-bg.jpg",
-    "images": ["/images/hero-bg.jpg", "/images/azusa2.jpg", "/images/hero-bg.jpg"],
+    "image": "/img/A15.webp",
+    "images": [
+      "/img/A16.webp",
+      "/img/A17.webp",
+      "/img/A18.webp"
+    ],
     "size": "65 m²",
     "occupancy": "Max 3 Guests",
     "pricePerNight": 240,
     "currency": "NGN",
     "features": [
-      { "label": "King Bed", "icon": "bed" },
-      { "label": "City View", "icon": "view" },
-      { "label": "Free Wi-Fi", "icon": "wifi" },
-      { "label": "Smart TV", "icon": "tv" }
+      {
+        "label": "King Bed",
+        "icon": "bed"
+      },
+      {
+        "label": "City View",
+        "icon": "view"
+      },
+      {
+        "label": "Free Wi-Fi",
+        "icon": "wifi"
+      },
+      {
+        "label": "Smart TV",
+        "icon": "tv"
+      }
     ],
     "href": "/rooms/executive-sovereign-suite",
     "delay": 0
@@ -22,17 +38,33 @@
     "id": "room-02",
     "title": "Premium Diplomatic Apartment",
     "category": "Apartments",
-    "image": "/images/azusa2.jpg",
-    "images": ["/images/azusa2.jpg", "/images/hero-bg.jpg", "/images/azusa2.jpg"],
+    "image": "/img/A1.webp",
+    "images": [
+      "/img/A2.webp",
+      "/img/A3.webp",
+      "/img/A4.webp"
+    ],
     "size": "98 m²",
     "occupancy": "Max 5 Guests",
     "pricePerNight": 390,
     "currency": "NGN",
     "features": [
-      { "label": "2 Bedrooms", "icon": "key" },
-      { "label": "Kitchenette", "icon": "chef" },
-      { "label": "Balcony", "icon": "sunset" },
-      { "label": "Private Chef Opt.", "icon": "chef" }
+      {
+        "label": "2 Bedrooms",
+        "icon": "key"
+      },
+      {
+        "label": "Kitchenette",
+        "icon": "chef"
+      },
+      {
+        "label": "Balcony",
+        "icon": "sunset"
+      },
+      {
+        "label": "Private Chef Opt.",
+        "icon": "chef"
+      }
     ],
     "href": "/rooms/premium-diplomatic-apartment",
     "delay": 2000
@@ -41,17 +73,33 @@
     "id": "room-03",
     "title": "Signature Royal Penthouse",
     "category": "Penthouse",
-    "image": "/images/hero-bg.jpg",
-    "images": ["/images/hero-bg.jpg", "/images/azusa2.jpg", "/images/hero-bg.jpg"],
+    "image": "/img/A5.webp",
+    "images": [
+      "/img/A6.webp",
+      "/img/A7.webp",
+      "/img/A8.webp"
+    ],
     "size": "145 m²",
     "occupancy": "Max 6 Guests",
     "pricePerNight": 650,
     "currency": "NGN",
     "features": [
-      { "label": "Grand Terrace", "icon": "castle" },
-      { "label": "Private Jacuzzi", "icon": "bath" },
-      { "label": "24/7 Butler", "icon": "butler" },
-      { "label": "Airport Transfer", "icon": "car" }
+      {
+        "label": "Grand Terrace",
+        "icon": "castle"
+      },
+      {
+        "label": "Private Jacuzzi",
+        "icon": "bath"
+      },
+      {
+        "label": "24/7 Butler",
+        "icon": "butler"
+      },
+      {
+        "label": "Airport Transfer",
+        "icon": "car"
+      }
     ],
     "href": "/rooms/signature-royal-penthouse",
     "delay": 4000
