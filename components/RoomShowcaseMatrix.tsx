@@ -1,9 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { RoomSuite } from '../app/types/rooms';
+
+// IMPORT THE NEW SHARABLE INTERACTIVE DETAILED MODAL LAYER
+import RoomDetailModal from './RoomDetailModal';
 
 // IMPORTING RE-VALIDATED, SAFE VECTORS FROM LUCIDE ICON DICTIONARY
 import { 
@@ -92,12 +94,7 @@ const RoomCardImageGallery: React.FC<{ images: string[]; title: string; delay: n
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* 
-        HORIZONTAL SLIDE CONTAINER ENGINE
-        Uses hardware-accelerated translations to achieve clean, premium side-scrolling actions
-      */}
       {images.map((src, index) => {
-        // Calculate transition positions dynamically based on direction history
         let translationClass = 'translate-x-0';
         if (index !== imgIdx) {
           translationClass = direction === 'next' ? 'translate-x-full' : '-translate-x-full';
@@ -119,7 +116,6 @@ const RoomCardImageGallery: React.FC<{ images: string[]; title: string; delay: n
         );
       })}
       
-      {/* Cinematic Gradient Overlays */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-20 pointer-events-none" />
       
       {/* MANUAL SLIDER ARROW BUTTONS */}
@@ -164,6 +160,15 @@ export const RoomShowcaseMatrix: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('ALL');
   const searchParams = useSearchParams();
   const categories = ['ALL', 'Luxury Suites', 'Apartments', 'Penthouse'];
+
+  // MODAL OPERATIONAL MANAGEMENT STATES
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [selectedRoom, setSelectedRoom] = useState<RoomSuite | null>(null);
+
+  const handleOpenModal = (room: RoomSuite) => {
+    setSelectedRoom(room);
+    setIsModalOpen(true);
+  };
 
   useEffect(() => {
     const categoryParam = searchParams.get('category');
@@ -260,12 +265,13 @@ export const RoomShowcaseMatrix: React.FC = () => {
                       </div>
                     </div>
 
-                    <Link 
-                      href={room.href}
-                      className="inline-flex items-center justify-center bg-[#4A0A15] text-white font-bold text-[11px] uppercase tracking-widest px-6 py-3 hover:bg-[#36070E] transition-all transform active:scale-95 shadow-md rounded-full"
+                    {/* WIRED INTERACTIVE HOOK TRIGGERS */}
+                    <button 
+                      onClick={() => handleOpenModal(room)}
+                      className="inline-flex items-center justify-center bg-[#4A0A15] text-white font-bold text-[11px] uppercase tracking-widest px-6 py-3 hover:bg-[#36070E] transition-all transform active:scale-95 shadow-md rounded-full cursor-pointer"
                     >
                       <span>View Suite</span>
-                    </Link>
+                    </button>
                   </div>
                 </div>
 
@@ -278,6 +284,14 @@ export const RoomShowcaseMatrix: React.FC = () => {
           )}
         </div>
       </div>
+
+      {/* RENDER DYNAMIC MODAL BOX AT BASE LEVEL */}
+      <RoomDetailModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        room={selectedRoom}
+      />
+
     </section>
   );
 };

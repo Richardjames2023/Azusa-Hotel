@@ -37,7 +37,7 @@ export const Header: React.FC = () => {
     'Abuja, Nigeria'
   ];
   const languages = ['ENGLISH', 'FRANÇAIS', 'DEUTSCH', 'ESPAÑOL'];
-  const currencies = ['EUR', 'USD', 'GBP', 'NGN'];
+  const currencies = ['NGN', 'USD', 'GBP', 'EUR'];
 
   // --- SIDE EFFECTS CONTROL (Outside Clicks) ---
   useEffect(() => {
@@ -224,7 +224,7 @@ export const Header: React.FC = () => {
 
         {/* Center Section: Core Text Hyperlinks */}
         <nav className="hidden lg:flex items-center space-x-6 text-[13px] font-bold text-black tracking-tight">
-          <Link href="/destinations" className="hover:opacity-70 transition-opacity">Destinations</Link>
+          <Link href="/rooms" className="hover:opacity-70 transition-opacity">Rooms</Link>
           <Link href="/resorts" className="hover:opacity-70 transition-opacity">Resorts</Link>
           <Link href="/meetings-events" className="hover:opacity-70 transition-opacity">Meetings & Events</Link>
           <Link href="/deals" className="hover:opacity-70 transition-opacity">Deals</Link>
