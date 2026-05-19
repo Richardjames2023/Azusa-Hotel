@@ -183,7 +183,7 @@ export const RoomShowcaseMatrix: React.FC = () => {
     : ROOMS_DATABASE.filter(room => room.category === activeCategory);
 
   return (
-    <section className="w-full bg-[#1E110E] pb-20 pt-6 font-sans flex flex-col items-center">
+    <section className="w-full bg-[#1E110E] font-sans flex flex-col items-center">
       <div className="w-full bg-white p-8 md:p-16 shadow-2xl rounded-none">
         
         {/* UPPER MATRIX FILTER CONTROL PANEL LAYER */}

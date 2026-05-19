@@ -11,10 +11,6 @@ const DESTINATIONS_DATA = DESTINATIONS_JSON as DestinationCard[];
 
 export const PopularDestinations: React.FC = () => {
   return (
-    /* 
-      TRUE FULL-WIDTH BACKGROUND CANVAS 
-      The core outer section wrapper stretches edge-to-edge with no border-radius configurations
-    */
     <section className="w-full bg-white py-12 md:py-16 font-sans flex flex-col items-center select-none relative z-10">
       
       <div className="w-full max-w-[1440px] px-6 md:px-12 lg:px-16 flex flex-col rounded-none shadow-none bg-transparent">
