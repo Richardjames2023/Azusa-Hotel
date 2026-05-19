@@ -6,25 +6,25 @@
     "subtitle": "by Sonder-Living",
     "ctaText": "Book Now",
     "ctaHref": "/about-museum",
-    "bgImage": "/img/A14.webp",
+    "bgImage": "/img/MAP13548(1).webp",
     "cards": [
       {
         "id": "card-1",
-        "title": "События",
-        "subtitle": "и занятия",
-        "image": "/img/A12.webp"
+        "title": "Azusa",
+        "subtitle": "Grand Suite",
+        "image": "/img/A2.webp"
       },
       {
         "id": "card-2",
-        "title": "Подвалы",
-        "subtitle": "XVII века",
-        "image": "/img/A13.webp"
+        "title": "Azusa",
+        "subtitle": "Signature Studio",
+        "image": "/img/A7.webp"
       },
       {
         "id": "card-3",
-        "title": "Уникальная",
-        "subtitle": "в России",
-        "image": "/img/A14.webp"
+        "title": "Azusa",
+        "subtitle": "Deluxe Suite",
+        "image": "/img/MAP13600.webp"
       }
     ]
   },
@@ -39,17 +39,20 @@
     "cards": [
       {
         "id": "card-4",
-        "title": "Дегустация",
-        "image": "/img/A12.webp"
+        "title": "Azusa",
+        "subtitle": "Premier Royal",
+        "image": "/img/MAP13626(1).webp"
       },
       {
         "id": "card-5",
-        "title": "Мастер-классы",
+        "title": "Azusa",
+        "subtitle": "Vista Rio",
         "image": "/img/A13.webp"
       },
       {
         "id": "card-6",
-        "title": "Лавка чудес",
+        "title": "Azusa",
+        "subtitle": "Cafe Rio",
         "image": "/img/A14.webp"
       }
     ]
