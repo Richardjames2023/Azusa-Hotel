@@ -29,11 +29,6 @@ export const PopularDestinations: React.FC = () => {
           </Link>
         </div>
 
-        {/* 
-          DESTINATION CARDS MATRIX
-          UPDATED: Each destination card link now utilizes 'rounded-2xl' to apply a clean 
-          border radius to the images and clipping paths smoothly.
-        */}
         <div className="flex overflow-x-auto gap-6 pb-4 md:pb-6 snap-x snap-mandatory scroll-smooth lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-visible lg:pb-0 scrollbar-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {DESTINATIONS_DATA.map((destination) => (
             <Link 
@@ -48,7 +43,7 @@ export const PopularDestinations: React.FC = () => {
                 onError={(e) => {
                   const imgElement = e.target as HTMLImageElement;
                   imgElement.onerror = null; 
-                  imgElement.src = '/images/hero-bg.jpg'; 
+                  imgElement.src = '/img/discovery.webp'; 
                 }}
               />
 

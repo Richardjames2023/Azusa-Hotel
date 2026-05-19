@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export const Header: React.FC = () => {
@@ -217,8 +218,17 @@ export const Header: React.FC = () => {
             <span className="w-full h-[2px] bg-current rounded-sm"></span>
           </button>
           
-          <Link href="/" className="text-[34px] tracking-tight text-[#D4AF37] font-serif font-normal lowercase relative bottom-0.5">
-            azüsa
+          <Link 
+            href="/" 
+            className="text-[34px] tracking-tight text-[#D4AF37] font-serif font-normal lowercase relative bottom-0.5 select-none block w-36 h-10"
+          >
+            <Image 
+              src="/img/logo-color.png" 
+              alt="Azusa Luxury Hotel & Apartments Logo" 
+              fill 
+              className="object-contain object-left" 
+              priority 
+            />
           </Link>
         </div>
 

@@ -169,13 +169,13 @@ export const HeroSection: React.FC = () => {
       <div className="flex lg:hidden items-center justify-center space-x-4 mt-6">
         <button 
           onClick={handlePrevSlide}
-          className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white bg-[#3B0E17]/40 hover:bg-[#D4AF37] hover:text-black transition-all active:scale-95"
+          className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white bg-[#3B0E17]/40 hover:bg-[#DCD286] hover:text-black transition-all active:scale-95"
         >
           <svg className="w-4 h-4 transform rotate-180 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
         </button>
         <button 
           onClick={handleNextSlide}
-          className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white bg-[#3B0E17]/40 hover:bg-[#D4AF37] hover:text-black transition-all active:scale-95"
+          className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white bg-[#3B0E17]/40 hover:bg-[#DCD286] hover:text-black transition-all active:scale-95"
         >
           <svg className="w-4 h-4 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
         </button>
