@@ -1,23 +1,44 @@
+/* app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* 
+  STATIC FONT DEFINITIONS LAYER
+  Pulls assets securely via universal URLs bypassing Webpack compilation locks
+*/
+@font-face {
+  font-family: 'DavossyCustom';
+  src: url('/fonts/Davossy.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GlirockCustom';
+  src: url('/fonts/Glirock-regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 
+  GRANULAR DISTINCT BRAND OVERRIDES
+  Maps your available fonts across all specific text components cleanly
+*/
 @layer base {
   /* Set Glirock as your primary structural heading font face */
   h1, h2, h3 {
-    font-family: var(--font-glirock), sans-serif !important;
+    font-family: 'GlirockCustom', sans-serif !important;
   }
   
-  /* Set Davossy as your alternative secondary header layout font */
-  h4, h5, h6 {
-    font-family: var(--font-davossy), sans-serif !important;
-  }
-  
-  /* Map paragraphs, links, list items, and action buttons to Davossy */
-  p, span, li, a, button, input, select, textarea {
-    font-family: sans-serif !important;
+  /* Map paragraphs, subheadings, links, and action buttons to Davossy */
+  h4, h5, h6, p, span, li, a, button, input, select, textarea {
+    font-family: 'DavossyCustom', sans-serif !important;
   }
 }
+
 
 /* Custom Scrollbar for Modal */
 .custom-scrollbar::-webkit-scrollbar {
