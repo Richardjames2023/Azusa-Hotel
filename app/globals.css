@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-/* 
-  GRANULAR DISTINCT GLOBAL TYPOGRAPHY SELECTION MATRIX 
-  Maps your available fonts across all specific text components cleanly
-*/
 @layer base {
   /* Set Glirock as your primary structural heading font face */
   h1, h2, h3 {
