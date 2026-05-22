@@ -35,7 +35,7 @@
   
   /* Map paragraphs, subheadings, links, and action buttons to Davossy */
   h4, h5, h6, p, span, li, a, button, input, select, textarea {
-    font-family: 'DavossyCustom', sans-serif !important;
+    font-family:  sans-serif !important;
   }
 }
 
