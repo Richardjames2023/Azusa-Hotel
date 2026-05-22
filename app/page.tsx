@@ -7,6 +7,7 @@ import { RoomShowcaseMatrix } from "../components/RoomShowcaseMatrix";
 import { Suspense } from "react";
 import { StackedBenefitsWrapper } from "../components/StackedBenefitsWrapper";
 import { FacilitiesShowcase } from "../components/FacilitiesShowcase";
+import { BankBenefitSection } from "../components/BankBenefitSection";
 
 // types/index.ts
 export interface NavItem {
@@ -35,6 +36,7 @@ export default function HomePage() {
       <RoomShowcaseMatrix />
       </Suspense>
       <FacilitiesShowcase/>
+        <BankBenefitSection />
       <StackedBenefitsWrapper/>
       <Footer />
     </main>

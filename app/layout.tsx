@@ -1,27 +1,38 @@
-import { Cormorant_Garamond, Plus_Jakarta_Sans, Montserrat } from 'next/font/google';
-import "./globals.css";
+// app/layout.tsx
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+import "./globals.css"; // Your main styles sheet
 
-const displayFont = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['400', '600', '700'],
-  style: ['normal', 'italic'],
-  variable: '--font-display',
+// 1. Initialize your actual physical brand type loaders
+const davossyFont = localFont({
+  src: "./fonts/Davossy.otf",
+  variable: "--font-davossy",
+  display: "swap",
 });
 
-const mainFont = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  variable: '--font-main',
+const glirockFont = localFont({
+  src: "./fonts/Glirock-regular.otf",
+  variable: "--font-glirock",
+  display: "swap",
 });
 
-const secondaryFont = Montserrat({
-  subsets: ['latin'],
-  variable: '--font-secondary',
-});
+export const metadata: Metadata = {
+  title: "Azusa Hotels & Luxury Apartments",
+  description: "Experience premium hospitality sanctuary spaces in Abuja.",
+};
 
-export default function RootLayout({ children }: {children: React.ReactNode;}) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en" className={`${displayFont.variable} ${mainFont.variable} ${secondaryFont.variable}`}>
-      <body className="font-main antialiased bg-stone-50 text-stone-900">
+    <html lang="en">
+      {/* 
+        2. Inject both working font variable class strings onto the root body.
+        Removed the missing placeholder variables to clear the build error instantly.
+      */}
+      <body className={`${davossyFont.variable} ${glirockFont.variable} antialiased`}>
         {children}
       </body>
     </html>

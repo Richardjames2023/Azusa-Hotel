@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,9 +8,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['var(--font-display)', 'serif'],     // For large headings
-        main: ['var(--font-main)', 'sans-serif'],        // For body copy
-        secondary: ['var(--font-secondary)', 'sans-serif'], // For buttons/nav
+        // Individual reference fallback utility tokens
+        davossy: ['var(--font-davossy)', 'sans-serif'],
+        glirock: ['var(--font-glirock)', 'sans-serif'],
+        display: ['var(--font-display)', 'serif'],
+        secondary: ['var(--font-secondary)', 'sans-serif'],
+        main: ['var(--font-main)', 'sans-serif'],
       },
     },
   },
