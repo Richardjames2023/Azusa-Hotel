@@ -158,11 +158,12 @@ export const Header: React.FC = () => {
               {/* MOBILE ONLY NAVIGATION STACK */}
               <div className="flex flex-col lg:hidden space-y-1">
                 {[
-                  { label: 'Destinations', href: '/destinations' },
-                  { label: 'Resorts', href: '/resorts' },
+                  { label: 'Rooms', href: '/rooms' },
+                  { label: 'Blog', href: '/blog' },
+                  { label: 'Restaurants', href: '/restaurants' },
                   { label: 'Meetings & Events', href: '/meetings-events' },
                   { label: 'Deals', href: '/deals' },
-                  { label: 'Azusa Rewards', href: '/rewards' }
+                  { label: 'Azusa Rewards', href: '/rewards' },
                 ].map((link) => (
                   <Link 
                     key={link.label}
@@ -235,9 +236,9 @@ export const Header: React.FC = () => {
         {/* Center Section: Core Text Hyperlinks */}
         <nav className="hidden lg:flex items-center space-x-6 text-[13px] font-bold text-black tracking-tight">
           <Link href="/rooms" className="hover:opacity-70 transition-opacity">Rooms</Link>
-          <Link href="/resorts" className="hover:opacity-70 transition-opacity">Resorts</Link>
+          <Link href="/restaurant" className="hover:opacity-70 transition-opacity">Restaurant</Link>
+           <Link href="/blog" className="hover:opacity-70 transition-opacity">Blog</Link>
           <Link href="/meetings-events" className="hover:opacity-70 transition-opacity">Meetings & Events</Link>
-          <Link href="/deals" className="hover:opacity-70 transition-opacity">Deals</Link>
           <Link href="/rewards" className="hover:opacity-70 transition-opacity">Azusa Rewards</Link>
           
           {/* Managed "More" Dropdown Hook */}
