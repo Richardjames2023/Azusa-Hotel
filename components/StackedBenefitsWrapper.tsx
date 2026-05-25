@@ -12,15 +12,15 @@ export const StackedBenefitsWrapper: React.FC = () => {
       
       <div className="w-full max-w-none flex flex-col relative space-y-1 md:space-y-0">
         
-        <div className="sticky top-6 z-10 w-full shadow-[0_10px_40px_rgba(0,0,0,0.15)] rounded-none overflow-hidden">
+        {/* <div className="sticky top-6 z-10 w-full shadow-[0_10px_40px_rgba(0,0,0,0.15)] rounded-none overflow-hidden">
           <BestRateSection />
-        </div>
+        </div> */}
 
         {/* <div className="sticky top-12 z-20 w-full shadow-[0_20px_50px_rgba(0,0,0,0.35)] rounded-none overflow-hidden">
           <ExclusiveBenefitsSection />
         </div> */}
 
-        <div className="sticky top-12 z-20 w-full shadow-[0_15px_45px_rgba(0,0,0,0.25)] rounded-none overflow-hidden">
+        <div className="sticky top-6 z-10 w-full shadow-[0_15px_45px_rgba(0,0,0,0.25)] rounded-none overflow-hidden">
           <BrandShowcase />
         </div>
 

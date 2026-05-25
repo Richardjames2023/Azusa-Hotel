@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { DestinationCard } from '../app/types/destination'; 
 
-// CHORE: Clean static import from data directory replacing the hardcoded clutter array
+// Clean static import from data directory replacing the hardcoded clutter array
 import DESTINATIONS_JSON from '../app/data/destinations.json';
 
 const DESTINATIONS_DATA = DESTINATIONS_JSON as DestinationCard[];
