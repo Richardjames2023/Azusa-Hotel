@@ -5,17 +5,27 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+
   theme: {
     extend: {
       fontFamily: {
-        // Individual reference fallback utility tokens
-        davossy: ['var(--font-davossy)', 'sans-serif'],
-        glirock: ['var(--font-glirock)', 'sans-serif'],
-        display: ['var(--font-display)', 'serif'],
-        secondary: ['var(--font-secondary)', 'sans-serif'],
-        main: ['var(--font-main)', 'sans-serif'],
+        // Luxury Hospitality Serif
+        luxury: ['var(--font-cormorant)', 'serif'],
+
+        // Main UI Font
+        inter: ['var(--font-inter)', 'sans-serif'],
+
+        // Modern UI Sections
+        manrope: ['var(--font-manrope)', 'sans-serif'],
+
+        // Body Content
+        body: ['var(--font-dmSans)', 'sans-serif'],
+
+        // Navigation / Buttons
+        nav: ['var(--font-poppins)', 'sans-serif'],
       },
     },
   },
+
   plugins: [],
 }
