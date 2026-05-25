@@ -1,22 +1,64 @@
+/* app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
+@layer base {
+
+  /* Hero Headings / Luxury Branding */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-cormorant), serif !important;
+    letter-spacing: -0.02em;
+  }
+
+  /* Navigation / Menus / Buttons */
+  nav,
+  button,
+  .nav-link,
+  .menu-item {
+    font-family: var(--font-poppins), sans-serif !important;
+  }
+
+  /* Main Body Content */
+  p,
+  span,
+  li,
+  input,
+  textarea,
+  select,
+  label {
+    font-family: var(--font-dmSans), sans-serif !important;
+  }
+
+  /* Optional Elegant UI Sections */
+  .ui-modern {
+    font-family: var(--font-manrope), sans-serif !important;
+  }
+
+  body {
+    font-family: var(--font-inter), sans-serif;
+    background: #ffffff;
+    color: #111111;
+  }
+}
+
 /* Custom Scrollbar for Modal */
 .custom-scrollbar::-webkit-scrollbar {
-    width: 6px;
+  width: 6px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-    background: transparent;
+  background: transparent;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #e2e8f0;
-    border-radius: 20px;
+  background-color: #e2e8f0;
+  border-radius: 20px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background-color: #cbd5e1;
+  background-color: #cbd5e1;
 }

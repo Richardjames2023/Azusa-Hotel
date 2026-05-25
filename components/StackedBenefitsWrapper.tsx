@@ -16,11 +16,11 @@ export const StackedBenefitsWrapper: React.FC = () => {
           <BestRateSection />
         </div>
 
-        <div className="sticky top-12 z-20 w-full shadow-[0_20px_50px_rgba(0,0,0,0.35)] rounded-none overflow-hidden">
+        {/* <div className="sticky top-12 z-20 w-full shadow-[0_20px_50px_rgba(0,0,0,0.35)] rounded-none overflow-hidden">
           <ExclusiveBenefitsSection />
-        </div>
+        </div> */}
 
-        <div className="sticky top-20 z-30 w-full shadow-[0_15px_45px_rgba(0,0,0,0.25)] rounded-none overflow-hidden">
+        <div className="sticky top-12 z-20 w-full shadow-[0_15px_45px_rgba(0,0,0,0.25)] rounded-none overflow-hidden">
           <BrandShowcase />
         </div>
 

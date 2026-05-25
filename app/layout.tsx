@@ -1,27 +1,77 @@
-import { Cormorant_Garamond, Plus_Jakarta_Sans, Montserrat } from 'next/font/google';
+// app/layout.tsx
+
+import type { Metadata } from "next";
 import "./globals.css";
 
-const displayFont = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['400', '600', '700'],
-  style: ['normal', 'italic'],
-  variable: '--font-display',
+// GOOGLE FONT IMPORTS
+import {
+  Cormorant_Garamond,
+  Inter,
+  Manrope,
+  DM_Sans,
+  Poppins,
+} from "next/font/google";
+
+// LUXURY SERIF — HERO / BRANDING
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-cormorant",
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
-const mainFont = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  variable: '--font-main',
+// PRIMARY UI FONT
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
-const secondaryFont = Montserrat({
-  subsets: ['latin'],
-  variable: '--font-secondary',
+// MODERN UI SUPPORT FONT
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
 });
 
-export default function RootLayout({ children }: {children: React.ReactNode;}) {
+// BODY CONTENT FONT
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dmSans",
+  display: "swap",
+});
+
+// NAVIGATION / BUTTON FONT
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: "Azusa Hotels & Luxury Apartments",
+  description: "Experience premium hospitality sanctuary spaces in Abuja.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en" className={`${displayFont.variable} ${mainFont.variable} ${secondaryFont.variable}`}>
-      <body className="font-main antialiased bg-stone-50 text-stone-900">
+    <html lang="en">
+      <body
+        className={`
+          antialiased
+          ${cormorant.variable}
+          ${inter.variable}
+          ${manrope.variable}
+          ${dmSans.variable}
+          ${poppins.variable}
+          font-inter
+        `}
+      >
         {children}
       </body>
     </html>
