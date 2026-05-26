@@ -22,7 +22,7 @@ export const PopularDestinations: React.FC = () => {
           </h2>
           
           <Link 
-            href="/destinations" 
+            href="/explore" 
             className="inline-flex items-center justify-center border border-[#3B0E17] text-[#3B0E17] font-bold text-[11px] tracking-wider uppercase px-6 py-2 hover:bg-[#3B0E17] hover:text-white transition-all transform hover:-translate-y-0.5 duration-200 self-start sm:self-auto rounded-full shadow-xs"
           >
             See More

@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 
 export const BankBenefitSection: React.FC = () => {
   return (
@@ -24,9 +25,11 @@ export const BankBenefitSection: React.FC = () => {
           </span>
 
           {/* Core Action Button for the section */}
-          <button className="bg-[#4A0A15] hover:bg-[#36070E] text-white font-extrabold text-xs tracking-widest uppercase px-8 py-3.5 shadow-sm transition-colors duration-200 transform active:scale-98 rounded-none cursor-pointer">
+          <Link 
+          href="/deals"
+          className="bg-[#4A0A15] hover:bg-[#36070E] text-white font-extrabold text-xs tracking-widest uppercase px-8 py-3.5 shadow-sm transition-colors duration-200 transform active:scale-98 rounded-none cursor-pointer">
             Claim Benefit Discount
-          </button>
+          </Link>
 
         </div>
 

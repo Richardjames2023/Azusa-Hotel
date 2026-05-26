@@ -14,7 +14,7 @@
     "tagline": "REVITALIZE YOUR MIND & BODY",
     "description": "Indulge in tailored therapeutic massages, premium organic skincare treatments, and holistic wellness sessions designed entirely to restore clarity and balance. Complete with steam therapy paths and quiet ambient lounges, your ultimate rejuvenation awaits.",
     "image": "/images/azusa2.jpg",
-    "ctaHref": "/about",
+    "ctaHref": "/explore",
     "highlights": ["Organic Skincare", "Therapeutic Massage", "Steam Therapy"]
   },
   {
@@ -23,7 +23,7 @@
     "tagline": "ELEVATED ROOFTOP MIXOLOGY",
     "description": "Take in sweeping city skylines from our high-end rooftop destination. Sip handcrafted custom cocktails, sample globally inspired tapas plates, and relax in an ambient interior configuration tailored perfectly for networking, late evenings, or intimate escapes.",
     "image": "/images/hero-bg.jpg",
-    "ctaHref": "/about",
+    "ctaHref": "/explore",
     "highlights": ["Handcrafted Cocktails", "Panoramic Views", "Premium Tapas"]
   }
 ]
