@@ -8,7 +8,7 @@ export const Header: React.FC = () => {
   // --- STATE ENGINES ---
   const [destination, setDestination] = useState('');
   const [showDestSuggestions, setShowDestSuggestions] = useState(false);
-  
+
   // Custom Date System States
   const [checkInDate, setCheckInDate] = useState<Date | null>(new Date(2026, 3, 14)); // Tue 14 Apr 2026
   const [checkOutDate, setCheckOutDate] = useState<Date | null>(new Date(2026, 3, 15)); // Wed 15 Apr 2026
@@ -80,7 +80,7 @@ export const Header: React.FC = () => {
     const month = date.getMonth();
     const firstDayIndex = new Date(year, month, 1).getDay();
     const totalDays = new Date(year, month + 1, 0).getDate();
-    
+
     const stepsArray: (Date | null)[] = Array(firstDayIndex).fill(null);
     for (let d = 1; d <= totalDays; d++) {
       stepsArray.push(new Date(year, month, d));
@@ -128,20 +128,28 @@ export const Header: React.FC = () => {
 
   return (
     <header className="w-full bg-white font-sans selection:bg-amber-200">
-      
+
       {/* BACKGROUND DRAWER BACKDROP MASK PANEL */}
       <div className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[100] transition-opacity duration-300 ${showDrawer ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-        
+
         {/* INTERACTIVE COMPONENT DRAWER PANEL */}
-        <div 
+        <div
           ref={drawerRef}
           className={`absolute top-0 left-0 h-full w-[340px] bg-[#4A0A15] shadow-2xl p-8 flex flex-col justify-between transform transition-transform duration-300 ease-out z-[110] text-[#F5E6C8] ${showDrawer ? 'translate-x-0' : '-translate-x-full'}`}
         >
           <div>
             {/* Header branding line within modular window */}
             <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/10">
-              <span className="text-2xl tracking-tight text-[#D4AF37] font-serif lowercase font-medium">azüsa</span>
-              <button 
+              <div className="relative w-36 h-10 transition-opacity group-hover:opacity-80">
+                <Image
+                  src="/img/logo.png"
+                  alt="Azusa Hotels Logo"
+                  fill
+                  className="object-contain object-left"
+                  priority
+                />
+              </div>
+              <button
                 onClick={() => setShowDrawer(false)}
                 className="p-1.5 rounded-full text-white/60 hover:text-white hover:bg-white/10 transition-all border border-white/5"
                 aria-label="Close panel"
@@ -154,7 +162,7 @@ export const Header: React.FC = () => {
 
             {/* HIGH-DENSITY PROFESSIONAL DRAWER LINK ROUTING NAVIGATION */}
             <nav className="flex flex-col text-sm tracking-wide font-medium">
-              
+
               {/* MOBILE ONLY NAVIGATION STACK */}
               <div className="flex flex-col lg:hidden space-y-1">
                 {[
@@ -165,10 +173,10 @@ export const Header: React.FC = () => {
                   { label: 'Deals', href: '/deals' },
                   { label: 'Azusa Rewards', href: '/rewards' },
                 ].map((link) => (
-                  <Link 
+                  <Link
                     key={link.label}
-                    onClick={() => setShowDrawer(false)} 
-                    href={link.href} 
+                    onClick={() => setShowDrawer(false)}
+                    href={link.href}
                     className="w-full px-4 py-3 rounded-lg text-[#F5E6C8]/90 hover:text-white hover:bg-white/10 transition-all block font-semibold"
                   >
                     {link.label}
@@ -185,10 +193,10 @@ export const Header: React.FC = () => {
                   { label: 'Media Gallery', href: '/gallery' },
                   { label: 'Contact & Support', href: '/contact' }
                 ].map((link) => (
-                  <Link 
+                  <Link
                     key={link.label}
-                    onClick={() => setShowDrawer(false)} 
-                    href={link.href} 
+                    onClick={() => setShowDrawer(false)}
+                    href={link.href}
                     className="w-full px-4 py-3 rounded-lg text-[#F5E6C8]/80 hover:text-white hover:bg-white/10 transition-all block"
                   >
                     {link.label}
@@ -206,29 +214,29 @@ export const Header: React.FC = () => {
 
       {/* Upper Navigation Row (Z-Index Layer 50) */}
       <div className="w-full max-w-[1440px] mx-auto px-6 h-[72px] flex items-center justify-between relative z-50 bg-white">
-        
+
         {/* Left Side: Hamburger Trigger Hook & Branding */}
         <div className="flex items-center space-x-5">
-          <button 
+          <button
             onClick={() => setShowDrawer(!showDrawer)}
-            className="hamburger-trigger flex flex-col justify-between w-5 h-3.5 text-gray-800 hover:opacity-70 transition-opacity focus:outline-none" 
+            className="hamburger-trigger flex flex-col justify-between w-5 h-3.5 text-gray-800 hover:opacity-70 transition-opacity focus:outline-none"
             aria-label="Toggle Menu Panel"
           >
             <span className="w-full h-[2px] bg-current rounded-sm"></span>
             <span className="w-full h-[2px] bg-current rounded-sm"></span>
             <span className="w-full h-[2px] bg-current rounded-sm"></span>
           </button>
-          
-          <Link 
-            href="/" 
+
+          <Link
+            href="/"
             className="text-[34px] tracking-tight text-[#D4AF37] font-serif font-normal lowercase relative bottom-0.5 select-none block w-36 h-10"
           >
-            <Image 
-              src="/img/logo-color.png" 
-              alt="Azusa Luxury Hotel & Apartments Logo" 
-              fill 
-              className="object-contain object-left" 
-              priority 
+            <Image
+              src="/img/logo-color.png"
+              alt="Azusa Luxury Hotel & Apartments Logo"
+              fill
+              className="object-contain object-left"
+              priority
             />
           </Link>
         </div>
@@ -237,13 +245,13 @@ export const Header: React.FC = () => {
         <nav className="hidden lg:flex items-center space-x-6 text-[13px] font-bold text-black tracking-tight">
           <Link href="/rooms" className="hover:opacity-70 transition-opacity">Rooms</Link>
           <Link href="/restaurant" className="hover:opacity-70 transition-opacity">Restaurant</Link>
-           <Link href="/blog" className="hover:opacity-70 transition-opacity">Blog</Link>
+          <Link href="/blog" className="hover:opacity-70 transition-opacity">Blog</Link>
           <Link href="/meetings-events" className="hover:opacity-70 transition-opacity">Meetings & Events</Link>
           <Link href="/rewards" className="hover:opacity-70 transition-opacity">Azusa Rewards</Link>
-          
+
           {/* Managed "More" Dropdown Hook */}
           <div className="relative z-50" ref={moreMenuRef}>
-            <button 
+            <button
               onClick={() => setShowMoreMenu(!showMoreMenu)}
               className="flex items-center space-x-1 hover:opacity-70 transition-opacity font-bold focus:outline-none"
             >
@@ -265,7 +273,7 @@ export const Header: React.FC = () => {
         {/* Right Section: Utility Tools & CTA */}
         <div className="flex items-center space-x-3 relative z-50">
           <div className="relative" ref={localizationRef}>
-            <button 
+            <button
               onClick={() => setShowLocalization(!showLocalization)}
               className="flex items-center space-x-2 border border-black rounded-full px-4 py-2 text-[11px] font-bold text-black hover:bg-gray-50 transition-colors focus:outline-none"
             >
@@ -285,8 +293,8 @@ export const Header: React.FC = () => {
               <div>
                 <span className="block text-[10px] text-gray-400 font-bold uppercase tracking-wider mb-2">Language</span>
                 {languages.map((lang) => (
-                  <button 
-                    key={lang} 
+                  <button
+                    key={lang}
                     onClick={() => { setCurrentLang(lang); setShowLocalization(false); }}
                     className={`block w-full text-left text-xs py-2 px-2.5 rounded-lg font-semibold transition-all ${currentLang === lang ? 'bg-[#4A0A15] text-white' : 'text-gray-700 hover:bg-gray-50'}`}
                   >
@@ -297,8 +305,8 @@ export const Header: React.FC = () => {
               <div className="border-l border-gray-100 pl-3">
                 <span className="block text-[10px] text-gray-400 font-bold uppercase tracking-wider mb-2">Currency</span>
                 {currencies.map((curr) => (
-                  <button 
-                    key={curr} 
+                  <button
+                    key={curr}
                     onClick={() => { setCurrentCurrency(curr); setShowLocalization(false); }}
                     className={`block w-full text-left text-xs py-2 px-2.5 rounded-lg font-semibold transition-all ${currentCurrency === curr ? 'bg-[#4A0A15] text-white' : 'text-gray-700 hover:bg-gray-50'}`}
                   >
@@ -318,7 +326,7 @@ export const Header: React.FC = () => {
       {/* Floating Header Booking Bar Wrap */}
       <div className="w-full bg-[#DCB286] py-3.5 px-6 relative z-10">
         <div className="max-w-[1320px] mx-auto bg-white rounded-lg shadow-md flex flex-col md:flex-row items-center divide-y md:divide-y-0 md:divide-x divide-gray-200 p-1 relative">
-          
+
           {/* Section 1: Target Destination Vector Input */}
           <div className="w-full md:w-5/12 flex items-center px-4 py-2.5 relative" ref={destRef}>
             <div className="text-gray-500 mr-3">
@@ -329,7 +337,7 @@ export const Header: React.FC = () => {
             </div>
             <div className="flex flex-col w-full">
               <span className="text-[10px] text-gray-400 font-bold tracking-tight">Choose your next adventure</span>
-              <input 
+              <input
                 type="text"
                 placeholder="Destination or hotel"
                 value={destination}
@@ -356,8 +364,8 @@ export const Header: React.FC = () => {
 
           {/* Section 2 & 3 Combined Ref Context for Custom Floating Calendar Panel */}
           <div className="w-full md:w-6/12 grid grid-cols-2 divide-x divide-gray-200 relative" ref={calendarRef}>
-            
-            <div 
+
+            <div
               onClick={() => { setActiveCalendarSelector('in'); setShowDestSuggestions(false); }}
               className={`flex items-center justify-between px-4 py-2.5 cursor-pointer group transition-colors ${activeCalendarSelector === 'in' ? 'bg-amber-50/50' : ''}`}
             >
@@ -373,7 +381,7 @@ export const Header: React.FC = () => {
               <svg className="w-3 h-3 text-gray-400 group-hover:text-gray-600 transition-colors" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
             </div>
 
-            <div 
+            <div
               onClick={() => { setActiveCalendarSelector('out'); setShowDestSuggestions(false); }}
               className={`flex items-center justify-between px-4 py-2.5 cursor-pointer group transition-colors ${activeCalendarSelector === 'out' ? 'bg-amber-50/50' : ''}`}
             >
@@ -397,10 +405,10 @@ export const Header: React.FC = () => {
                 </span>
                 <div className="flex space-x-1">
                   <button onClick={() => setCurrentCalendarView(new Date(currentCalendarView.getFullYear(), currentCalendarView.getMonth() - 1, 1))} className="p-1 rounded-lg hover:bg-gray-100 transition-colors text-gray-600">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
                   </button>
                   <button onClick={() => setCurrentCalendarView(new Date(currentCalendarView.getFullYear(), currentCalendarView.getMonth() + 1, 1))} className="p-1 rounded-lg hover:bg-gray-100 transition-colors text-gray-600">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
                   </button>
                 </div>
               </div>
