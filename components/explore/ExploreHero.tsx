@@ -16,7 +16,7 @@ export const ExploreHero: React.FC = () => {
           {/* Main Portrait Frame Panel */}
           <div className="col-span-6 h-full rounded-2xl overflow-hidden shadow-md group relative border border-stone-200/40">
             <img 
-              src="/images/boutique-mall.jpg" 
+              src="/img/A4.webp" 
               alt="Boutique Shopping" 
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95"
             />
@@ -26,14 +26,14 @@ export const ExploreHero: React.FC = () => {
           <div className="col-span-6 flex flex-col gap-4 h-full">
             <div className="h-1/2 rounded-2xl overflow-hidden shadow-md group relative border border-stone-200/40">
               <img 
-                src="/images/varuna-lounge.jpg" 
+                src="/img/A5.webp" 
                 alt="Varuna Lounge Vibe" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div className="h-1/2 rounded-2xl overflow-hidden shadow-md group relative border border-stone-200/40">
               <img 
-                src="/images/vitas-cuisine.jpg" 
+                src="/img/A6.webp" 
                 alt="Fine Dining Vitas Rio" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />

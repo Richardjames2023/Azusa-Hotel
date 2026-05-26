@@ -9,7 +9,7 @@ const ATTRACTIONS_DATABASE: AttractionItem[] = [
     title: "Varuna by the good Beach",
     description: "Live music, good drinks and a lively crowd, Varuna is the spot to be when you want a proper night out.",
     category: "Culture",
-    image: "/images/varuna-lounge.jpg",
+    image: "/img/A1.webp",
     iconType: "drink"
   },
   {
@@ -17,7 +17,7 @@ const ATTRACTIONS_DATABASE: AttractionItem[] = [
     title: "Los Angeles Mall",
     description: "A world of shopping right at your doorstep, from fashion and lifestyle pieces to home essentials.",
     category: "Shopping",
-    image: "/images/boutique-mall.jpg",
+    image: "/img/A2.webp",
     iconType: "shop"
   },
   {
@@ -25,7 +25,7 @@ const ATTRACTIONS_DATABASE: AttractionItem[] = [
     title: "Vita Rio",
     description: "From local favourites to global flavours, dining options are closer than you imagine, just steps away.",
     category: "Culture",
-    image: "/images/vitas-cuisine.jpg",
+    image: "/img/A3.webp",
     iconType: "food"
   }
 ];
