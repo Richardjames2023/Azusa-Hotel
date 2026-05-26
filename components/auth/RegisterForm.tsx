@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const RegisterForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -64,8 +65,17 @@ export const RegisterForm: React.FC = () => {
         </div>
 
         <div className="relative z-10 text-left">
-          <Link href="/" className="text-3xl font-normal tracking-tight font-serif lowercase block">
-            azüsa<span className="text-[10px] font-sans tracking-widest text-[#D4AF37] block -mt-1.5 uppercase font-bold pl-0.5">hotel</span>
+          <Link href="/" >
+            <div className="relative w-36 h-10 transition-opacity group-hover:opacity-80">
+              <Image
+                src="/img/logo.png"
+                alt="Azusa Hotels Logo"
+                fill
+                className="object-contain object-left"
+                priority
+              />
+            </div>
+            <span className="text-[10px] font-sans tracking-widest text-[#D4AF37] block mt-1.5 uppercase font-bold pl-0.5">hotels & Apartments</span>
           </Link>
         </div>
 
