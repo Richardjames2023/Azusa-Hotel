@@ -1,21 +1,24 @@
+"use client";
+
 import React from 'react';
+import Image from "next/image";
 
 export const MeetingCoreValues: React.FC = () => {
   const coreValues = [
     {
       title: "Personal",
       desc: "We believe in the invincible power of building close personal relationships, enabling us to act as a true partner.",
-      image: "/images/value-personal.jpg"
+      image: "/img/MAP13581.webp"
     },
     {
       title: "Professional",
       desc: "We offer our exceptional professional expertise to drive fresh ideas in addition to supporting and guiding our M&E partners with seamless delivery.",
-      image: "/images/value-professional.jpg"
+      image: "/img/MAP13626(1).webp"
     },
     {
       title: "Memorable",
       desc: "We strive to deliver unforgettable meetings and events by crafting positive experiences full of memorable moments to surprise and delight every attendee.",
-      image: "/images/value-memorable.jpg"
+      image: "/img/MAP13548(1).webp"
     }
   ];
 
@@ -26,6 +29,8 @@ export const MeetingCoreValues: React.FC = () => {
     "Instant booking confirmation",
     "Easy and secure online payment"
   ];
+
+  const instagramShortcode = "DXPYj9qOMZF";
 
   return (
     <div className="w-full bg-white py-12 px-6 lg:px-12 font-sans flex flex-col items-center">
@@ -45,14 +50,37 @@ export const MeetingCoreValues: React.FC = () => {
         </div>
 
         {/* Instant Booking Value Proposition Panel (Middle Parabola Accent Curve) */}
-        <div className="w-full bg-[#F4F4F6] p-8 md:p-14 rounded-3xl border border-stone-200/40 grid grid-cols-1 lg:grid-cols-12 items-center gap-8 shadow-sm">
-          <div className="lg:col-span-5 flex items-center justify-center">
-            {/* Visual Media Play Mock Component */}
-            <div className="w-20 h-20 rounded-full border-2 border-stone-900 flex items-center justify-center cursor-pointer hover:bg-stone-900 hover:text-white transition-all text-xl pl-1 shadow-md bg-white">
-              ▶
-            </div>
-          </div>
-          <div className="lg:col-span-7 flex flex-col items-start justify-center">
+       <div className="w-full bg-[#F4F4F6] p-8 md:p-14 rounded-3xl border border-stone-200/40 grid grid-cols-1 lg:grid-cols-12 items-center gap-8 shadow-sm">
+      
+          {/* LEFT COLUMN: Visual Media Thumbnail Link Frame */}
+          <div className="lg:col-span-5 relative w-full h-64 sm:h-72 md:h-80 lg:h-full min-h-[260px] rounded-2xl overflow-hidden flex items-center justify-center shadow-inner group bg-black">
+            
+            <a 
+              href={`https://www.instagram.com/reel/${instagramShortcode}/`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute inset-0 w-full h-full flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#4A0A15] rounded-2xl"
+              aria-label="Watch our booking video on Instagram"
+            >
+              <Image 
+                src="/img/MAP13626(1).webp" 
+                alt="Booking visual media preview"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                priority
+              />
+
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors duration-300" />
+
+              {/* Play Button */}
+              <div className="relative z-10 w-20 h-20 rounded-full border-2 border-white/80 flex items-center justify-center bg-white/20 backdrop-blur-md text-white group-hover:bg-white group-hover:text-stone-900 group-hover:border-white transition-all text-xl pl-1 shadow-xl">
+                ▶
+              </div>
+            </a>
+         </div>
+
+          {/* RIGHT COLUMN: Call to Action */}
+          <div className="lg:col-span-7 flex flex-col items-start justify-center lg:pl-4">
             <h3 className="text-xl md:text-2xl font-bold tracking-tight text-stone-900 font-serif leading-snug mb-5">
               Save valuable time with instant online booking for groups, meetings and events
             </h3>
@@ -68,6 +96,7 @@ export const MeetingCoreValues: React.FC = () => {
               SEE MORE
             </button>
           </div>
+
         </div>
 
       </div>

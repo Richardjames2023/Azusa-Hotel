@@ -25,7 +25,7 @@ export const MeetingPerksGrid: React.FC = () => {
           {/* Business Analytics Image Side */}
           <div className="lg:col-span-5 h-[260px] rounded-xl overflow-hidden shadow-md bg-stone-100 border border-gray-200/50">
             <img 
-              src="/images/business-analytics.jpg" 
+              src="/img/A14.webp" 
               alt="Business Analytics Infographics Data" 
               className="w-full h-full object-cover filter brightness-[0.98]"
             />
