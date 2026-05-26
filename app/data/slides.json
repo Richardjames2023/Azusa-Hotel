@@ -5,7 +5,7 @@
     "titleBold": "Apartments",
     "subtitle": "by Sonder-Living",
     "ctaText": "Book Now",
-    "ctaHref": "/about-museum",
+    "ctaHref": "/rooms",
     "bgImage": "/img/MAP13548(1).webp",
     "cards": [
       {
@@ -34,7 +34,7 @@
     "titleBold": "Experience",
     "subtitle": "Traditions of taste through the depths of time",
     "ctaText": "Exhibitions",
-    "ctaHref": "/exhibitions",
+    "ctaHref": "/explore",
     "bgImage": "/img/A12.webp",
     "cards": [
       {

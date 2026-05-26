@@ -133,7 +133,9 @@ export default function RoomCard({ room, onReadMore }: RoomCardProps) {
                     <span className="ml-1 transform group-hover/link:translate-x-1 transition-transform inline-block">➔</span>
                 </button>
 
-                <button className="w-full bg-[#4A0A15] hover:bg-[#36070E] text-white py-3.5 px-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors duration-200 shadow-sm hover:shadow-md">
+                <button 
+                onClick={onReadMore}
+                className="w-full bg-[#4A0A15] hover:bg-[#36070E] text-white py-3.5 px-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors duration-200 shadow-sm hover:shadow-md">
                     Book Now
                 </button>
             </div>

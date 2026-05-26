@@ -5,7 +5,7 @@
     "tagline": "CHIC ACCOMMODATIONS & LOCAL FLAVORS",
     "description": "Plan your next getaway to the vibrant city of Abuja and make Azusa, Abuja your ultimate destination! With its chic accommodations, exceptional dining experiences infused with local flavors, and state-of-the-art amenities, our hotel invites you to immerse yourself in a world of indulgence and relaxation.",
     "image": "/images/hero-bg.jpg",
-    "ctaHref": "/facilities/dining",
+    "ctaHref": "/about",
     "highlights": ["Local Flavors", "Chic Accommodations", "Fine Wine Cellar"]
   },
   {
@@ -14,7 +14,7 @@
     "tagline": "REVITALIZE YOUR MIND & BODY",
     "description": "Indulge in tailored therapeutic massages, premium organic skincare treatments, and holistic wellness sessions designed entirely to restore clarity and balance. Complete with steam therapy paths and quiet ambient lounges, your ultimate rejuvenation awaits.",
     "image": "/images/azusa2.jpg",
-    "ctaHref": "/facilities/spa",
+    "ctaHref": "/about",
     "highlights": ["Organic Skincare", "Therapeutic Massage", "Steam Therapy"]
   },
   {
@@ -23,7 +23,7 @@
     "tagline": "ELEVATED ROOFTOP MIXOLOGY",
     "description": "Take in sweeping city skylines from our high-end rooftop destination. Sip handcrafted custom cocktails, sample globally inspired tapas plates, and relax in an ambient interior configuration tailored perfectly for networking, late evenings, or intimate escapes.",
     "image": "/images/hero-bg.jpg",
-    "ctaHref": "/facilities/lounge",
+    "ctaHref": "/about",
     "highlights": ["Handcrafted Cocktails", "Panoramic Views", "Premium Tapas"]
   }
 ]
