@@ -1,10 +1,10 @@
 [
   {
     "id": "slide-01",
-    "titleLight": "Azusa Hotel",
-    "titleBold": "Apartments",
-    "subtitle": "by Sonder-Living",
-    "ctaText": "Book Now",
+    "titleLight": "Welcome to Azusa",
+    "titleBold": "Hotels & Luxury Apartments",
+    "subtitle": "Where “Make Yourself at Home” Is A Reality",
+    "ctaText": "Reserve Your Spot",
     "ctaHref": "/rooms",
     "bgImage": "/img/MAP13548(1).webp",
     "cards": [
@@ -30,10 +30,10 @@
   },
   {
     "id": "slide-02",
-    "titleLight": "African culture and hospitality",
-    "titleBold": "Experience",
-    "subtitle": "Traditions of taste through the depths of time",
-    "ctaText": "Exhibitions",
+    "titleLight": "Experience African Culture and Hospitality",
+    "titleBold": "At Its Peak",
+    "subtitle": "Abuja's Premium Address for Love, Leisure, and Luxury.",
+    "ctaText": "Explore",
     "ctaHref": "/explore",
     "bgImage": "/img/A12.webp",
     "cards": [

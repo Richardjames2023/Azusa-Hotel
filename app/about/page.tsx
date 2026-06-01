@@ -5,7 +5,6 @@ import { AboutHero } from '@/components/meetings/AboutHero';
 import { AboutIntro } from '@/components/meetings/AboutIntro';
 import { AboutPickList } from '@/components/meetings/AboutPickList';
 import { AboutInstantBooking } from '@/components/meetings/AboutInstantBooking';
-import { AboutValueProps } from '@/components/meetings/AboutValueProps';
 // import { MeetingsNews } from '@/components/meetings/MeetingsNews';
 
 export const metadata: Metadata = {
@@ -34,7 +33,7 @@ export default function MeetingsEventsPage() {
       <AboutInstantBooking />
 
       {/* 5. 3-Column Granular Proposition Feature Matrix Grid */}
-      <AboutValueProps />
+      
 
       {/* 6. Lower News Categories Segment Strip */}
       {/* <AboutNews /> */}

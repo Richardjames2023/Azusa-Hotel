@@ -149,9 +149,9 @@ export const DealsRowGrid: React.FC = () => {
                       
                       <Link 
                         href={deal.ctaHref}
-                        className="inline-flex items-center justify-center bg-[#4A0A15] text-white font-bold text-xs uppercase tracking-widest rounded-full px-8 py-3.5 hover:bg-[#36070E] transition-all transform active:scale-95 shadow-md hover:shadow-lg"
+                        className="inline-flex items-center justify-center bg-[#4A0A15] text-white font-bold text-xs tracking-widest rounded-full px-8 py-3.5 hover:bg-[#36070E] transition-all transform active:scale-95 shadow-md hover:shadow-lg"
                       >
-                        Claim Offer
+                        Claim Offer 
                       </Link>
                     </div>
                   </div>

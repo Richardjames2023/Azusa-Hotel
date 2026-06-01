@@ -13,11 +13,11 @@ export const BankBenefitSection: React.FC = () => {
         <div className="lg:col-span-7 flex flex-col items-start justify-center text-left h-full">
           
           <h2 className="text-xl md:text-2xl lg:text-3xl font-extrabold tracking-tight text-stone-900 mb-2 font-serif">
-            Enjoy the Exclusive Benefit
+            Unlock Exclusive Benefits
           </h2>
           
           <p className="text-xs md:text-sm font-bold text-gray-700 tracking-wide leading-relaxed max-w-xl mb-3">
-            Enjoy premium hospitality at Azusa Hotel with an exclusive discount when you pay with your Providus Bank.
+            Enjoy exclusive discounts when you pay with your Providus Bank card, and keep an eye on our seasonal offers designed to make your next visit even more memorable.
           </p>
           
           <span className="text-[9px] md:text-[10px] font-semibold text-gray-400 uppercase tracking-widest block mb-5">
@@ -28,7 +28,7 @@ export const BankBenefitSection: React.FC = () => {
           <Link 
           href="/deals"
           className="bg-[#4A0A15] hover:bg-[#36070E] text-white font-extrabold text-xs tracking-widest uppercase px-8 py-3.5 shadow-sm transition-colors duration-200 transform active:scale-98 rounded-none cursor-pointer">
-            Claim Benefit Discount
+            Claim Your Discount 
           </Link>
 
         </div>

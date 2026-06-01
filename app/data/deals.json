@@ -1,9 +1,9 @@
 [
   {
     "id": "deal-01",
-    "title": "The Ultimate Weekend Escape",
-    "tagline": "EXCLUSIVE RETREAT PACKAGE",
-    "description": "Indulge in a luxurious weekend stay at Azusa. Enjoy 25% off our premium rooms, complimentary signature cocktails at the lounge, and an extended late check-out till 4:00 PM.",
+    "title": "The Exclusive Retreat Package",
+    "tagline": "Weekends are For Recess ",
+    "description": "After all the stress of the week, you need some time to decompress. Get 25% off our premium rooms, complimentary cocktails waiting for you at the lounge, and a late 4PM check-out so you can squeeze every last drop out of your stay. Valid until December 31, 2026.",
     "image": "/images/A13.webp",
     "discountPercentage": 25,
     "validUntil": "Valid until Dec 31, 2026",
@@ -17,9 +17,9 @@
   },
   {
     "id": "deal-02",
-    "title": "Corporate Wellness & Workation",
-    "tagline": "STRUCTURED BUSINESS LIVING",
-    "description": "Combine productivity with absolute luxury. Book a consecutive 3-night stay in our Executive Suite and unlock premium high-speed dedicated Wi-Fi network routing, complimentary meeting room access, and entry to our Signature Wellness Spa paths.",
+    "title": "The Executive Package",
+    "tagline": "Corporate Wellness & Workation",
+    "description": "Stay with us for three consecutive nights and unlock access to our complimentary meeting room and our signature wellness spa.",
     "image": "/images/suite_main.png",
     "validUntil": "Valid year-round",
     "features": [

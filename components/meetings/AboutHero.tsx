@@ -19,7 +19,7 @@ export const AboutHero: React.FC = () => {
       {/* Center Editorial Typography Content */}
       <div className="relative z-10 px-6 max-w-4xl flex flex-col items-center">
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-normal tracking-tight text-white font-serif uppercase leading-tight mb-4 drop-shadow-md">
-          Built For Work, Designed For Connection
+          Our Corporate Event Spaces. Built For Work; Designed for Connection 
         </h1>
         <div className="w-24 h-[3px] bg-[#D4AF37] rounded-full" />
       </div>

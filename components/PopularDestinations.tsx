@@ -18,7 +18,7 @@ export const PopularDestinations: React.FC = () => {
         {/* UPPER TITLE & NAVIGATION CALL TO ACTION BAR */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10 border-b border-gray-100 pb-4">
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-stone-900 font-serif">
-            Popular destinations
+            Places You Should Visit
           </h2>
           
           <Link 
