@@ -12,13 +12,9 @@ export const AboutIntro: React.FC = () => {
         </h2>
         
         <p className="text-stone-600 text-xs md:text-sm font-medium leading-relaxed tracking-wide mb-5">
-          As a partner, moment maker, and solution-finder, we understand that flexibility and functionality are key to ensuring we can seamlessly deliver exactly what our M&E partners need to create impactful events.
+          We have been planning events long enough to understand how to make your events seamless and stress-free. We are a partner that listens, the team that solves problems, and the people who make sure your event runs exactly the way you imagined it. 
         </p>
         
-        <p className="text-stone-600 text-xs md:text-sm font-medium leading-relaxed tracking-wide">
-          We aim to offer the most dynamic, flexible, and functional solutions in the modern meetings and events marketplace—making sure every M&E planner enjoys peace of mind when they partner with Azusa Meetings, whether they are co-creating truly impactful meetings & events or arranging group accommodation.
-        </p>
-
       </div>
     </section>
   );

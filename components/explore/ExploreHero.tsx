@@ -47,10 +47,10 @@ export const ExploreHero: React.FC = () => {
             Nearby Locations
           </span>
           <h1 className="text-3xl md:text-5xl font-normal tracking-tight text-stone-900 font-serif leading-tight mb-5">
-            Explore the beautiful <br />city of Abuja
+            Explore Some of Abuja&rsquo;s <br />Finest Places
           </h1>
           <p className="text-gray-600 text-sm md:text-base font-medium leading-relaxed tracking-wide max-w-md">
-            From the elegant boutique of Los Angeles Mall to the vibrant, bustling vibes of Varuna and African & Intercontinental Cuisine at Vitas Rio, explore everything this dynamic city has to offer from the sophisticated comfort of Azusa.
+            Azusa is your perfect home base for experiencing everything this dynamic city has to offer. When you step outside, you’ll find yourself immersed in a world of culture, cuisine, entertainment, and adventure. 
           </p>
         </div>
 

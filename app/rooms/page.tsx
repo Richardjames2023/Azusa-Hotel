@@ -230,10 +230,10 @@ export default function RoomsPage() {
             Elite Sanctuary Living
           </span>
           <h2 className="text-2xl md:text-3xl font-normal text-stone-900 font-serif tracking-tight leading-tight mb-4">
-            A brand-new level of modern sophistication
+            Richness That Actually Lives Up to the Name 
           </h2>
           <p className="text-gray-600 text-xs md:text-sm font-medium leading-relaxed tracking-wide mb-6">
-            Our luxury suites provide space, privacy, and curated workspace parameters tailored perfectly for executives or private travellers visiting Abuja. Enjoy customized amenities and premium bedding systems.
+            Our luxury suites are in a completely different league: spacious, private, and set up with everything a busy executive or private traveller needs.
           </p>
           <div className="w-full h-[1px] bg-gray-200 mb-6" />
           <div className="flex flex-col space-y-1">

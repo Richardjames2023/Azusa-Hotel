@@ -6,8 +6,8 @@ import { AttractionCategory, AttractionItem } from '../../app/types/explore';
 const ATTRACTIONS_DATABASE: AttractionItem[] = [
   {
     id: "att-1",
-    title: "Varuna by the good Beach",
-    description: "Live music, good drinks and a lively crowd, Varuna is the spot to be when you want a proper night out.",
+    title: "Varuna by the Good Beach",
+    description: "If you're looking for a night of fun, Varuna is where you want to be. Perched right in the heart of Abuja, it's the kind of place where the energy is always high.",
     category: "Culture",
     image: "/img/A1.webp",
     iconType: "drink"
@@ -15,7 +15,7 @@ const ATTRACTIONS_DATABASE: AttractionItem[] = [
   {
     id: "att-2",
     title: "Los Angeles Mall",
-    description: "A world of shopping right at your doorstep, from fashion and lifestyle pieces to home essentials.",
+    description: "Whether you're hunting for the latest fashion pieces, picking up lifestyle finds, or just restocking the home with the essentials, this is the place where you come in for one thing and leave with a bag full of discoveries.",
     category: "Shopping",
     image: "/img/A2.webp",
     iconType: "shop"
@@ -23,7 +23,7 @@ const ATTRACTIONS_DATABASE: AttractionItem[] = [
   {
     id: "att-3",
     title: "Vita Rio",
-    description: "From local favourites to global flavours, dining options are closer than you imagine, just steps away.",
+    description: "Great food shouldn't be hard to find, and at Vita Rio, it isn't. Whether you're in the mood for the local dishes you grew up on or feeling adventurous enough to explore flavours from different parts of the world, the dining options here have you well covered.",
     category: "Culture",
     image: "/img/A3.webp",
     iconType: "food"
@@ -44,7 +44,7 @@ export const AttractionsExplorer: React.FC = () => {
     <div className="w-full bg-white py-16 px-6 lg:px-12 font-sans flex flex-col items-center">
       <div className="w-full max-w-[1440px] flex flex-col">
         
-        {/* Pitch Headline Layer block */}
+        {/* Pitch Headline Layer block
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12 border-b border-gray-100 pb-8 items-end">
           <div className="md:col-span-5">
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-stone-900 leading-tight">
@@ -56,7 +56,7 @@ export const AttractionsExplorer: React.FC = () => {
               Explore the cobbled streets, lively cafes, and bustling art galleries in vibrant Abuja. Make sure not to miss top attractions such as Varuna and the Wonderland.
             </p>
           </div>
-        </div>
+        </div> */}
 
         {/* Dynamic Controls Row (Categories + View Toggles) */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
