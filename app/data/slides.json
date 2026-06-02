@@ -1,8 +1,8 @@
 [
   {
     "id": "slide-01",
-    "titleLight": "Welcome to Azusa",
-    "titleBold": "Hotels & Luxury Apartments",
+    "titleLight": "Welcome to",
+    "titleBold": "Azusa Hotel",
     "subtitle": "Where “Make Yourself at Home” Is A Reality",
     "ctaText": "Reserve Your Spot",
     "ctaHref": "/rooms",
@@ -30,8 +30,8 @@
   },
   {
     "id": "slide-02",
-    "titleLight": "Experience African Culture and Hospitality",
-    "titleBold": "At Its Peak",
+    "titleLight": "Experience",
+    "titleBold": "Hospitality",
     "subtitle": "Abuja's Premium Address for Love, Leisure, and Luxury.",
     "ctaText": "Explore",
     "ctaHref": "/explore",

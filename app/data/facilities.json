@@ -4,7 +4,7 @@
     "title": "Your Unforgettable Abuja Experience Starts Here",
     "tagline": "Chic Accommodations & Local Flavors",
     "description": "Plan your next getaway to the vibrant city of Abuja and make Azusa, Abuja your ultimate destination! With its chic accommodations, exceptional dining experiences infused with local flavors, and state-of-the-art amenities, our hotel invites you to immerse yourself in a world of indulgence and relaxation.",
-    "image": "/images/hero-bg.jpg",
+    "image": "/img/A13.webp",
     "ctaHref": "/about",
     "highlights": ["Local Flavors", "Chic Accommodations", "Fine Wine Cellar"]
   },
@@ -13,7 +13,7 @@
     "title": "Signature Wellness Spa",
     "tagline": "Revitalize Your Mind & body ",
     "description": "Whatever the week threw at you, the Signature Wellness Spa is where you come to let it all go. Think therapeutic massages that actually work out the knots, organic skincare treatments your skin will thank you for, and steam therapy that melts the stress away.",
-    "image": "/images/azusa2.jpg",
+    "image": "/img/A4.webp",
     "ctaHref": "/explore",
     "highlights": ["Organic Skincare", "Therapeutic Massage", "Steam Therapy"]
   },
@@ -22,7 +22,7 @@
     "title": "The Panoramic Sky Lounge",
     "tagline": "Where The Skyline Meets Your Glass ",
     "description": "Sip, Socialise, and Stay a Little Longer. The Panoramic Sky Lounge is where the skyline becomes your backdrop, the cocktails and tapas keep coming, and the conversation flows as easily as the drinks.",
-    "image": "/images/hero-bg.jpg",
+    "image": "/img/A2.webp",
     "ctaHref": "/explore",
     "highlights": ["Handcrafted Cocktails", "Panoramic Views", "Premium Tapas"]
   }

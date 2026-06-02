@@ -15,7 +15,7 @@ export default function BlogArchivePage() {
     title: "The Four Best Places for Vacation in October",
     category: "Destination",
     description: "Whether you are looking for a vibrant cultural experience in Abuja, a relaxing stay near the scenic Jabi Lake, golden afternoons at Millennium Park, or an adventurous hike up Zuma Rock, October is the ideal month to explore the capital. Keep reading to find out which are the best places to visit in October with Azusa Hotels as the perfect base for your Nigerian getaway.",
-    image: "/images/hero-bg.jpg",
+    image: "/img/A12.webp",
     date: "19 Jul 2026",
     readTime: "5 min to read",
     href: "/blog/four-best-places-vacation-october"

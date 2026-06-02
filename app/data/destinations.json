@@ -2,19 +2,19 @@
   {
     "id": "dest-1",
     "title": "Discovery Museum",
-    "image": "/images/hero-bg.jpg",
+    "image": "/img/museumaaabj.jpg",
     "href": "/destinations/discovery-museum"
   },
   {
     "id": "dest-2",
     "title": "Magicland Park",
-    "image": "/images/azusa2.jpg",
+    "image": "/img/magiclandabj.webp",
     "href": "/destinations/magicland-park"
   },
   {
     "id": "dest-3",
     "title": "Farm City",
-    "image": "/images/hero-bg.jpg",
+    "image": "/img/farmcityabj.webp",
     "href": "/destinations/farm-city"
   }
 ]
