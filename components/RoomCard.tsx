@@ -125,13 +125,13 @@ export default function RoomCard({ room, onReadMore }: RoomCardProps) {
 
             {/* Card CTA Footer */}
             <div className="px-5 lg:p-6 pt-0 mt-auto pb-4">
-                <button
+                {/* <button
                     onClick={onReadMore}
                     className="inline-flex items-center text-xs font-bold tracking-widest text-[#8b1e2f] uppercase hover:text-[#4a0a0c] transition-colors mb-5 group/link bg-transparent border-none p-0 cursor-pointer"
                 >
                     Read More
                     <span className="ml-1 transform group-hover/link:translate-x-1 transition-transform inline-block">➔</span>
-                </button>
+                </button> */}
 
                 <button 
                 onClick={onReadMore}

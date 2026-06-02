@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -6,8 +7,8 @@ import Link from 'next/link';
 
 export const Header: React.FC = () => {
   // --- STATE ENGINES ---
-  const [destination, setDestination] = useState('');
-  const [showDestSuggestions, setShowDestSuggestions] = useState(false);
+  const [roomType, setRoomType] = useState('');
+  const [showRoomSuggestions, setShowRoomSuggestions] = useState(false);
 
   // Custom Date System States
   const [checkInDate, setCheckInDate] = useState<Date | null>(new Date(2026, 3, 14)); // Tue 14 Apr 2026
@@ -25,17 +26,17 @@ export const Header: React.FC = () => {
   // --- REFS FOR OUTSIDE CLICK CLOSURES ---
   const localizationRef = useRef<HTMLDivElement>(null);
   const moreMenuRef = useRef<HTMLDivElement>(null);
-  const destRef = useRef<HTMLDivElement>(null);
+  const roomRef = useRef<HTMLDivElement>(null);
   const calendarRef = useRef<HTMLDivElement>(null);
   const drawerRef = useRef<HTMLDivElement>(null);
 
   // --- MOCK DATABASE DATA ---
-  const sampleDestinations = [
-    'London, United Kingdom',
-    'Paris, France',
-    'Amsterdam, Netherlands',
-    'Dubai, United Arab Emirates',
-    'Abuja, Nigeria'
+  const sampleRoomTypes = [
+    'Deluxe King Room',
+    'Executive Studio Suite',
+    'Presidential Luxury Suite',
+    'Two-Bedroom Penthouse Apartment',
+    'Junior Garden Suite'
   ];
   const languages = ['ENGLISH', 'FRANÇAIS', 'DEUTSCH', 'ESPAÑOL'];
   const currencies = ['NGN', 'USD', 'GBP', 'EUR'];
@@ -50,8 +51,8 @@ export const Header: React.FC = () => {
       if (moreMenuRef.current && !moreMenuRef.current.contains(target)) {
         setShowMoreMenu(false);
       }
-      if (destRef.current && !destRef.current.contains(target)) {
-        setShowDestSuggestions(false);
+      if (roomRef.current && !roomRef.current.contains(target)) {
+        setShowRoomSuggestions(false);
       }
       if (calendarRef.current && !calendarRef.current.contains(target)) {
         setActiveCalendarSelector(null);
@@ -123,7 +124,7 @@ export const Header: React.FC = () => {
   };
 
   const handleSearchExecution = () => {
-    alert(`Searching availability for:\n📍 Destination: ${destination || 'Not specified'}\n📅 Check-in: ${checkInDate?.toDateString() || 'Empty'}\n📅 Check-out: ${checkOutDate?.toDateString() || 'Empty'}\n🌐 Language: ${currentLang} | Currency: ${currentCurrency}`);
+    alert(`Searching availability for:\n🛏️ Room Type: ${roomType || 'Not specified'}\n📅 Check-in: ${checkInDate?.toDateString() || 'Empty'}\n📅 Check-out: ${checkOutDate?.toDateString() || 'Empty'}\n🌐 Language: ${currentLang} | Currency: ${currentCurrency}`);
   };
 
   return (
@@ -327,36 +328,35 @@ export const Header: React.FC = () => {
       <div className="w-full bg-[#DCB286] py-3.5 px-6 relative z-10">
         <div className="max-w-[1320px] mx-auto bg-white rounded-lg shadow-md flex flex-col md:flex-row items-center divide-y md:divide-y-0 md:divide-x divide-gray-200 p-1 relative">
 
-          {/* Section 1: Target Destination Vector Input */}
-          <div className="w-full md:w-5/12 flex items-center px-4 py-2.5 relative" ref={destRef}>
+          {/* Section 1: Target Accommodation Room Type Input */}
+          <div className="w-full md:w-5/12 flex items-center px-4 py-2.5 relative" ref={roomRef}>
             <div className="text-gray-500 mr-3">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2 4v16M2 8h20M2 12h20M22 4v16M6 12V8M10 12V8" />
               </svg>
             </div>
             <div className="flex flex-col w-full">
-              <span className="text-[10px] text-gray-400 font-bold tracking-tight">Choose your next adventure</span>
+              <span className="text-[10px] text-gray-400 font-bold tracking-tight">Choose your accommodation preference</span>
               <input
                 type="text"
-                placeholder="Destination or hotel"
-                value={destination}
-                onFocus={() => { setShowDestSuggestions(true); setActiveCalendarSelector(null); }}
-                onChange={(e) => setDestination(e.target.value)}
+                placeholder="Select room or suite type"
+                value={roomType}
+                onFocus={() => { setShowRoomSuggestions(true); setActiveCalendarSelector(null); }}
+                onChange={(e) => setRoomType(e.target.value)}
                 className="w-full bg-transparent text-[13px] text-gray-800 placeholder-gray-400 font-bold focus:outline-none mt-0.5"
               />
             </div>
 
-            <div className={`absolute top-full left-0 w-full bg-white mt-2 border border-gray-100 rounded-xl shadow-2xl py-1.5 z-40 transform transition-all duration-200 origin-top ${showDestSuggestions ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
-              {sampleDestinations
-                .filter(d => d.toLowerCase().includes(destination.toLowerCase()))
-                .map((destName, i) => (
+            <div className={`absolute top-full left-0 w-full bg-white mt-2 border border-gray-100 rounded-xl shadow-2xl py-1.5 z-40 transform transition-all duration-200 origin-top ${showRoomSuggestions ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
+              {sampleRoomTypes
+                .filter(r => r.toLowerCase().includes(roomType.toLowerCase()))
+                .map((roomName, i) => (
                   <button
                     key={i}
-                    onClick={() => { setDestination(destName); setShowDestSuggestions(false); }}
+                    onClick={() => { setRoomType(roomName); setShowRoomSuggestions(false); }}
                     className="block w-full text-left px-4 py-2.5 text-xs text-gray-700 hover:bg-amber-50 font-bold transition-colors"
                   >
-                    {destName}
+                    {roomName}
                   </button>
                 ))}
             </div>
@@ -366,7 +366,7 @@ export const Header: React.FC = () => {
           <div className="w-full md:w-6/12 grid grid-cols-2 divide-x divide-gray-200 relative" ref={calendarRef}>
 
             <div
-              onClick={() => { setActiveCalendarSelector('in'); setShowDestSuggestions(false); }}
+              onClick={() => { setActiveCalendarSelector('in'); setShowRoomSuggestions(false); }}
               className={`flex items-center justify-between px-4 py-2.5 cursor-pointer group transition-colors ${activeCalendarSelector === 'in' ? 'bg-amber-50/50' : ''}`}
             >
               <div className="flex items-center">
@@ -382,7 +382,7 @@ export const Header: React.FC = () => {
             </div>
 
             <div
-              onClick={() => { setActiveCalendarSelector('out'); setShowDestSuggestions(false); }}
+              onClick={() => { setActiveCalendarSelector('out'); setShowRoomSuggestions(false); }}
               className={`flex items-center justify-between px-4 py-2.5 cursor-pointer group transition-colors ${activeCalendarSelector === 'out' ? 'bg-amber-50/50' : ''}`}
             >
               <div className="flex items-center">

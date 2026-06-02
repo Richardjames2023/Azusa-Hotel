@@ -2,19 +2,19 @@
   {
     "id": "dest-1",
     "title": "Discovery Museum",
-    "image": "/img/museumaaabj.jpg",
+    "image": "/img/museum2.jpeg",
     "href": "/destinations/discovery-museum"
   },
   {
     "id": "dest-2",
     "title": "Magicland Park",
-    "image": "/img/magiclandabj.webp",
+    "image": "/img/magic-land-abuja.webp",
     "href": "/destinations/magicland-park"
   },
   {
     "id": "dest-3",
     "title": "Farm City",
-    "image": "/img/farmcityabj.webp",
+    "image": "/img/farmcity2.jpeg",
     "href": "/destinations/farm-city"
   }
 ]

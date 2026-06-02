@@ -249,7 +249,7 @@ export default function RoomsPage() {
       {/* Sub Navigation Bar */}
       <section className="bg-[#4a0a0c] border-b border-[#300508] sticky top-0 z-40 w-full">
         <div className="w-full px-4 sm:px-8 lg:px-16 xl:px-24 flex items-center justify-between">
-          <div className="flex flex-1 items-center overflow-x-auto scrollbar-hide py-3 space-x-1 sm:space-x-2 mr-4">
+          {/* <div className="flex flex-1 items-center overflow-x-auto scrollbar-hide py-3 space-x-1 sm:space-x-2 mr-4">
             {subnavItems.map((item, index) => (
               <Link
                 key={index}
@@ -262,7 +262,7 @@ export default function RoomsPage() {
                 {item.label}
               </Link>
             ))}
-          </div>
+          </div> */}
           <div className="py-3 flex-shrink-0">
             <button className="bg-[#d4b58e] hover:bg-[#c4a37a] text-[#4a0a0c] px-6 sm:px-8 py-2 md:py-2.5 rounded-full text-sm font-bold tracking-widest transition-all hover:shadow-lg uppercase transform hover:-translate-y-0.5">
               Book
