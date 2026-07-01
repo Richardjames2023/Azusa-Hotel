@@ -31,9 +31,9 @@ export const PopularDestinations: React.FC = () => {
 
         <div className="flex overflow-x-auto gap-6 pb-4 md:pb-6 snap-x snap-mandatory scroll-smooth lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-visible lg:pb-0 scrollbar-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {DESTINATIONS_DATA.map((destination) => (
-            <Link 
+            <div
               key={destination.id}
-              href={destination.href}
+              // href={destination.href}
               className="group relative h-[420px] w-[85vw] sm:w-[45vw] lg:w-auto overflow-hidden bg-gray-100 border border-gray-200/40 flex-shrink-0 snap-center block transform transition-all duration-300 lg:hover:-translate-y-2 lg:shadow-md rounded-2xl"
             >
               <img 
@@ -52,7 +52,7 @@ export const PopularDestinations: React.FC = () => {
                   {destination.title}
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 

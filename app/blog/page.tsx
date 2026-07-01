@@ -3,6 +3,7 @@
 import React from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import SubNav from '@/components/subNav';
 import { BlogFeatured } from '@/components/blog/BlogFeatured';
 import { BlogGridCard } from '@/components/blog/BlogGridCard';
 import { BlogPostCard } from '@/app/types/blog';
@@ -98,6 +99,7 @@ export default function BlogArchivePage() {
 
       {/* 1. Upper Dynamic Editorial Hero Banner */}
       <BlogFeatured article={featuredArticle} />
+      <SubNav/>
 
       {/* 2. Structured Layout Archives Grid Section */}
       <section className="w-full bg-[#FCFBF9] py-12 md:py-16 flex flex-col items-center">

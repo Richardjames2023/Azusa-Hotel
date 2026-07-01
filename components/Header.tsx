@@ -9,6 +9,8 @@ export const Header: React.FC = () => {
   // --- STATE ENGINES ---
   const [roomType, setRoomType] = useState('');
   const [showRoomSuggestions, setShowRoomSuggestions] = useState(false);
+    const [showBookingBar, setShowBookingBar] = useState(true);
+  const lastScrollY = useRef(0);
 
   // Custom Date System States
   const [checkInDate, setCheckInDate] = useState<Date | null>(new Date(2026, 3, 14)); // Tue 14 Apr 2026
@@ -74,6 +76,16 @@ export const Header: React.FC = () => {
     }
     return () => { document.body.style.overflow = 'unset'; };
   }, [showDrawer]);
+
+   useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      setShowBookingBar(currentY < lastScrollY.current || currentY < 10);
+      lastScrollY.current = currentY;
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // --- CUSTOM ENGINE: CALENDAR GENERATOR ---
   const getDaysInMonthArray = (date: Date) => {

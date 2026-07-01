@@ -1,4 +1,3 @@
-// app/types/rooms.ts
 
 export interface RoomFeature {
   label: string;
@@ -9,13 +8,16 @@ export interface RoomSuite {
   id: string;
   title: string;
   category: string;
-  image: string; // Used if your previous single-image types are cached
-  images?: string[]; // Made optional to prevent strict compilation snags
+  description: string; 
+  image: string;       
+  images?: string[];  
   size: string;
   occupancy: string;
+  bedType?: string;   
   pricePerNight: number;
   currency: string;
   features: RoomFeature[];
   href: string;
-  delay?: number; // Made optional so old data rows don't crash
+  delay?: number;     
 }
+

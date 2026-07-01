@@ -5,7 +5,7 @@ import React from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { DiningHero } from '@/components/dining/DiningHero';
-import { DiningSubNav } from '@/components/dining/DiningSubNav';
+import SubNav from '@/components/subNav';
 import { DiningAbout } from '@/components/dining/DiningAbout';
 import { ChefSchedule } from '@/components/dining/ChefSchedule';
 import { DiningGalleryMap } from '@/components/dining/DiningGalleryMap';
@@ -21,7 +21,7 @@ export default function RestaurantPage() {
       <DiningHero />
 
       {/* Interactive Middle Filter Tab Bar */}
-      <DiningSubNav />
+      <SubNav />
 
       {/* Narrative Copy Segment Description */}
       <DiningAbout />

@@ -7,7 +7,7 @@ export default function DealsPage() {
   return (
     <div className="w-full min-h-screen bg-[#1E110E] flex flex-col overflow-x-hidden">
         <Header />
-      <main className="flex-grow flex flex-col pt-6">
+      <main className="flex-grow flex flex-col ">
         <DealsRowGrid />
       </main>
         <Footer />

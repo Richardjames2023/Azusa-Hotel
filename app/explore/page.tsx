@@ -3,6 +3,7 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { ExploreHero } from '../../components/explore/ExploreHero';
 import { AttractionsExplorer } from '../../components/explore/AttractionsExplorer';
+import SubNav from '@/components/subNav';
 
 export default function ExplorePage() {
   return (
@@ -11,6 +12,7 @@ export default function ExplorePage() {
         <Header />
       <main className="flex-grow flex flex-col">
         <ExploreHero />
+        <SubNav/>
         <AttractionsExplorer />
       </main>
       <Footer />

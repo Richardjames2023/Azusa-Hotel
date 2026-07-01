@@ -3,9 +3,13 @@
 import { useState } from "react";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
+import SubNav from "../../components/subNav";
 import RoomCard, { RoomData } from "../../components/RoomCard";
 import RoomDetailModal from "../../components/RoomDetailModal";
 import Image from "next/image";
+import DynamicRoomsShowcase from "@/components/DynamicRoomsShowcase";
+import ROOMS_DATABASE_JSON from '@/app/data/rooms.json';
+import { RoomSuite } from '@/app/types/rooms';
 import Link from "next/link";
 import {
   LuSnowflake,
@@ -47,22 +51,8 @@ export default function RoomsPage() {
     setSelectedRoom(null);
   };
 
-  const subnavItems: SubNavItem[] = [
-    { label: "Overview", href: "#", active: false },
-    { label: "Rooms", href: "#", active: true },
-    { label: "Services", href: "#", active: false },
-    { label: "Dining", href: "#", active: false },
-    { label: "Meetings & Events", href: "#", active: false },
-    { label: "Activities", href: "#", active: false },
-    { label: "Fitness & Wellness", href: "#", active: false },
-    { label: "Deals", href: "#", active: false },
-    { label: "Reviews", href: "#", active: false },
-    { label: "Nearby Attractions", href: "#", active: false },
-    { label: "Contact", href: "#", active: false },
-  ];
-
   const dummyDesc = "These rooms offer ample space with stylish décor and relaxing tones that allow you to feel at ease. After a restful night's sleep on your plush mattress, wake up to a refreshing rain shower with thoughtful bathroom amenities. During your stay, appreciate picturesque skyline views of the city from the comfort of your room. Unwind in the evening with your preferred entertainment on the flat-screen TV. Keep connected with our free Wi-Fi and share memorable moments.";
-
+  const ROOMS_DATABASE = ROOMS_DATABASE_JSON as RoomSuite[];
   const rooms: RoomData[] = [
     {
       title: "Standard Room",
@@ -183,115 +173,11 @@ export default function RoomsPage() {
       <Header />
 
       {/* Title Section */}
-      <section className="bg-[#f4f5f7] py-6 sm:py-8 lg:py-10 w-full">
-        <div className="w-full px-4 sm:px-8 lg:px-16 xl:px-24">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#2d3748] tracking-tight">
-            Azusa Premier Royal Suite
-          </h1>
-        </div>
-      </section>
 
-      {/* Hero Showcase Split Content Section */}
-      <section className="w-full flex flex-col lg:grid lg:grid-cols-5 bg-white border-b border-gray-100">
-        <div className="w-full lg:col-span-3 grid grid-cols-2 grid-rows-2 gap-1 h-[400px] md:h-[500px] lg:h-[600px]">
-          <div className="relative row-span-2 col-span-1 h-full w-full bg-gray-200 overflow-hidden group cursor-pointer">
-            <Image
-              src="/img/A16.webp"
-              alt="Azusa Premier Royal Suite Main"
-              fill
-              className="object-cover scale-110 group-hover:scale-100 transition-transform duration-700 ease-out"
-              sizes="(max-width: 1024px) 100vw, 40vw"
-              priority
-            />
-          </div>
-          <div className="relative row-span-1 col-span-1 h-full w-full bg-gray-200 overflow-hidden group cursor-pointer">
-            <Image
-              src="/img/A8.webp"
-              alt="Suite Bed View Side"
-              fill
-              className="object-cover scale-110 group-hover:scale-100 transition-transform duration-700 ease-out"
-              sizes="(max-width: 1024px) 50vw, 20vw"
-            />
-          </div>
-          <div className="relative row-span-1 col-span-1 h-full w-full bg-gray-200 overflow-hidden group cursor-pointer">
-            <Image
-              src="/img/A7.webp"
-              alt="Suite Bed View Front"
-              fill
-              className="object-cover scale-110 group-hover:scale-100 transition-transform duration-700 ease-out"
-              sizes="(max-width: 1024px) 50vw, 20vw"
-            />
-          </div>
-        </div>
-
-        {/* Right Info Section Block Panel */}
-        <div className="w-full lg:col-span-2 p-8 md:p-12 lg:p-16 flex flex-col justify-center items-start bg-[#FCFBF9]">
-          <span className="text-[10px] font-extrabold text-[#4A0A15] tracking-[0.25em] uppercase block mb-3">
-            Elite Sanctuary Living
-          </span>
-          <h2 className="text-2xl md:text-3xl font-normal text-stone-900 font-serif tracking-tight leading-tight mb-4">
-            Richness That Actually Lives Up to the Name 
-          </h2>
-          <p className="text-gray-600 text-xs md:text-sm font-medium leading-relaxed tracking-wide mb-6">
-            Our luxury suites are in a completely different league: spacious, private, and set up with everything a busy executive or private traveller needs.
-          </p>
-          <div className="w-full h-[1px] bg-gray-200 mb-6" />
-          <div className="flex flex-col space-y-1">
-            <span className="text-[10px] text-gray-400 font-extrabold uppercase tracking-widest">Pricing Structure</span>
-            <div className="flex items-baseline space-x-1.5">
-              <span className="text-2xl font-black text-[#4A0A15]">₦180,000</span>
-              <span className="text-xs text-gray-400 font-bold">/ night starting rate</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <DynamicRoomsShowcase rooms={ROOMS_DATABASE} />
 
       {/* Sub Navigation Bar */}
-      <section className="bg-[#4a0a0c] border-b border-[#300508] sticky top-0 z-40 w-full">
-        <div className="w-full px-4 sm:px-8 lg:px-16 xl:px-24 flex items-center justify-between">
-          {/* <div className="flex flex-1 items-center overflow-x-auto scrollbar-hide py-3 space-x-1 sm:space-x-2 mr-4">
-            {subnavItems.map((item, index) => (
-              <Link
-                key={index}
-                href={item.href}
-                className={`whitespace-nowrap px-4 sm:px-5 py-2 rounded-full text-[13px] sm:text-sm font-medium transition-all duration-200 ${item.active
-                  ? "bg-white text-[#4a0a0c] shadow-sm transform scale-105"
-                  : "text-gray-300 hover:text-white hover:bg-white/10"
-                  }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div> */}
-          <div className="py-3 flex-shrink-0">
-            <button className="bg-[#d4b58e] hover:bg-[#c4a37a] text-[#4a0a0c] px-6 sm:px-8 py-2 md:py-2.5 rounded-full text-sm font-bold tracking-widest transition-all hover:shadow-lg uppercase transform hover:-translate-y-0.5">
-              Book
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Main Suite Matrix Cards Grid Section */}
-      <section className="w-full py-16 px-4 sm:px-8 lg:px-16 xl:px-24 bg-white">
-        <div className="max-w-[1440px] mx-auto w-full flex flex-col">
-          <div className="mb-12 border-b border-gray-100 pb-4">
-            <h2 className="text-2xl md:text-3xl font-bold font-serif text-stone-900 tracking-tight">
-              Select Your Accommodation
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {rooms.map((roomItem, idx) => (
-              <RoomCard
-                key={idx}
-                room={roomItem}
-                /* WIRED: Hooks click parameter callback straight to state functions */
-                onReadMore={() => handleOpenModal(roomItem)}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      <SubNav/>
 
       <Footer />
 

@@ -1,8 +1,9 @@
 [
   {
     "id": "room-01",
-    "title": "Executive Sovereign Suite",
+    "title": "Azusa Signature Studio",
     "category": "Luxury Suites",
+    "description": "An exquisite premium suite curated meticulously for business executives, featuring sophisticated workspaces, privacy, and curated hospitality provisions.",
     "image": "/img/A15.webp",
     "images": [
       "/img/A16.webp",
@@ -11,7 +12,7 @@
     ],
     "size": "65 m²",
     "occupancy": "Max 3 Guests",
-    "pricePerNight": 240,
+    "pricePerNight": 180000,
     "currency": "NGN",
     "features": [
       {
@@ -36,8 +37,9 @@
   },
   {
     "id": "room-02",
-    "title": "Premium Diplomatic Apartment",
+    "title": "Azusa Deluxe Suite",
     "category": "Apartments",
+    "description": "Spacious multi-bedroom sanctuary layout engineered flawlessly to support families or traveling diplomatic parties looking for absolute privacy in Abuja.",
     "image": "/img/A1.webp",
     "images": [
       "/img/A2.webp",
@@ -46,11 +48,11 @@
     ],
     "size": "98 m²",
     "occupancy": "Max 5 Guests",
-    "pricePerNight": 390,
+    "pricePerNight": 250000,
     "currency": "NGN",
     "features": [
       {
-        "label": "2 Bedrooms",
+        "label": "1 Bedrooms",
         "icon": "key"
       },
       {
@@ -71,8 +73,9 @@
   },
   {
     "id": "room-03",
-    "title": "Signature Royal Penthouse",
+    "title": "Azusa Grand Suite ",
     "category": "Penthouse",
+    "description": "Our highest tier accommodation offering panoramic top-floor views of Maitama, premium terrace layouts, private jacuzzi spaces, and continuous personal butler service.",
     "image": "/img/A5.webp",
     "images": [
       "/img/A6.webp",
@@ -81,7 +84,43 @@
     ],
     "size": "145 m²",
     "occupancy": "Max 6 Guests",
-    "pricePerNight": 650,
+    "pricePerNight": 360000,
+    "currency": "NGN",
+    "features": [
+      {
+        "label": "Grand Terrace",
+        "icon": "castle"
+      },
+      {
+        "label": "Private Jacuzzi",
+        "icon": "bath"
+      },
+      {
+        "label": "24/7 Butler",
+        "icon": "butler"
+      },
+      {
+        "label": "Airport Transfer",
+        "icon": "car"
+      }
+    ],
+    "href": "/rooms/signature-royal-penthouse",
+    "delay": 4000
+  },
+  {
+    "id": "room-04",
+    "title": "Azusa Premier Royal Suite  ",
+    "category": "Penthouse",
+    "description": "Our highest tier accommodation offering panoramic top-floor views of Maitama, premium terrace layouts, private jacuzzi spaces, and continuous personal butler service.",
+    "image": "/img/A5.webp",
+    "images": [
+      "/img/A9.webp",
+      "/img/A11.webp",
+      "/img/A10.webp"
+    ],
+    "size": "145 m²",
+    "occupancy": "Max 6 Guests",
+    "pricePerNight": 450000,
     "currency": "NGN",
     "features": [
       {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
-import { MeetingBookingWidget } from '../../components/meeting/MeetingBookingWidget';
 import { MeetingHero } from '../../components/meeting/MeetingHero';
 import { MeetingPerksGrid } from '../../components/meeting/MeetingPerksGrid';
 import { MeetingCoreValues } from '../../components/meeting/MeetingCoreValues';

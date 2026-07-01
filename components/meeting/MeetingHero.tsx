@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import SubNav from '../subNav';
 
 export const MeetingHero: React.FC = () => {
   const [activeTab, setActiveTab] = useState('Overview');
@@ -33,7 +34,7 @@ export const MeetingHero: React.FC = () => {
       </div>
 
       {/* Horizontal Category Pill Filter Navigation Strip */}
-      <div className="w-full bg-[#4A0A15] py-3.5 px-6 relative z-30">
+      {/* <div className="w-full bg-[#4A0A15] py-3.5 px-6 relative z-30">
         <div className="max-w-[1440px] mx-auto flex items-center overflow-x-auto gap-3 scrollbar-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden whitespace-nowrap">
           {subCategories.map((tab) => (
             <button
@@ -49,7 +50,8 @@ export const MeetingHero: React.FC = () => {
             </button>
           ))}
         </div>
-      </div>
+      </div> */}
+      <SubNav/>
 
     </div>
   );

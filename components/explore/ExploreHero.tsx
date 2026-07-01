@@ -6,7 +6,7 @@ export const ExploreHero: React.FC = () => {
   const tabs = ['Overview', 'Rooms', 'Services', 'Dining', 'Meetings & Events', 'Activities', 'Fitness & Wellness', 'Deals', 'Reviews', 'Nearby attractions', 'Contact'];
 
   return (
-    <div className="w-full bg-[#FCFBF9] font-sans flex flex-col items-center">
+    <div className="w-full bg-[#FCFBF9] font-sans flex flex-col items-center pb-10">
       
       {/* Mosaic Hero Grid layout block */}
       <div className="w-full max-w-[1440px] px-6 py-12 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -57,7 +57,7 @@ export const ExploreHero: React.FC = () => {
       </div>
 
       {/* Internal View Anchor Navigation Pill Strip */}
-      <div className="w-full border-y border-gray-200 bg-white overflow-x-auto scrollbar-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      {/* <div className="w-full border-y border-gray-200 bg-white overflow-x-auto scrollbar-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <div className="max-w-[1440px] mx-auto px-6 h-14 flex items-center justify-between gap-6 whitespace-nowrap">
           <div className="flex items-center space-x-1.5 md:space-x-3 text-xs font-bold text-gray-500 uppercase tracking-wider">
             {tabs.map((tab) => (
@@ -77,7 +77,7 @@ export const ExploreHero: React.FC = () => {
             Book
           </button>
         </div>
-      </div>
+      </div> */}
 
     </div>
   );

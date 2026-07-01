@@ -1,10 +1,11 @@
 import { Metadata } from 'next';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { AboutHero } from '@/components/meetings/AboutHero';
-import { AboutIntro } from '@/components/meetings/AboutIntro';
-import { AboutPickList } from '@/components/meetings/AboutPickList';
-import { AboutInstantBooking } from '@/components/meetings/AboutInstantBooking';
+import { AboutHero } from '../../components/about/AboutHero';
+import { AboutIntro } from '../../components/about/AboutIntro';
+import { AboutPickList } from '../../components/about/AboutPickList';
+import { AboutInstantBooking } from '../../components/about/AboutInstantBooking';
+import SubNav from '@/components/subNav';
 // import { MeetingsNews } from '@/components/meetings/MeetingsNews';
 
 export const metadata: Metadata = {
@@ -22,6 +23,8 @@ export default function MeetingsEventsPage() {
 
       {/* 1. Immersive Theater Hall Hero Overlay Banner */}
       <AboutHero />
+
+      <SubNav/>
 
       {/* 2. Double-column Flexible Narrative Context */}
       <AboutIntro />

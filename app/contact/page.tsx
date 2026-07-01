@@ -3,6 +3,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { CorporateFormSection } from '../../components/contact/ContactFormMatrix';
 import { ContactMap } from '../../components/contact/ContactMap';
+import SubNav from '@/components/subNav';
 
 export const metadata: Metadata = {
   title: 'Corporate Enquiries & Events Contact | Azusa Hotels Abuja',
@@ -19,6 +20,8 @@ export default function CorporateContactPage() {
 
       {/* 1. Production Stateful Corporate Form Section Grid Block */}
       <CorporateFormSection />
+
+      <SubNav/>
 
       {/* 2. Full-bleed Property Geo Location Mapping Layout Frame */}
       <ContactMap />
