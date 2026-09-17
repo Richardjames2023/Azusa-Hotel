@@ -152,3 +152,12 @@ export default function RoomDetailsPage() {
     </main>
   );
 }
+
+export async function generateStaticParams() {
+  // Replace these with your actual room IDs if you fetch them from an API
+  return [
+    { id: '1' },
+    { id: '2' },
+    { id: '3' }
+  ];
+}
