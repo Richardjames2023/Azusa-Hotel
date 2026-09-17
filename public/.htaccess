@@ -1,0 +1,12 @@
+# Force Directory Index to find index.html
+DirectoryIndex index.html
+
+# Enable rewrite engine for clean Next.js static routing
+RewriteEngine On
+RewriteBase /
+
+# Handle trailing slashes or clean paths for static files
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
