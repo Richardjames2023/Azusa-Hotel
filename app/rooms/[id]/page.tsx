@@ -1,5 +1,7 @@
 "use client";
 
+
+export const dynamic = 'force-static';
 import React, { useState } from 'react';
 import { Header } from '../../../components/Header';
 import { Footer } from '../../../components/Footer';
@@ -153,11 +155,4 @@ export default function RoomDetailsPage() {
   );
 }
 
-export async function generateStaticParams() {
-  // Replace these with your actual room IDs if you fetch them from an API
-  return [
-    { id: '1' },
-    { id: '2' },
-    { id: '3' }
-  ];
-}
+
