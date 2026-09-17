@@ -216,3 +216,8 @@ export default async function DynamicBlogDetailsPage({ params }: { params: Promi
     </main>
   );
 }
+export async function generateStaticParams() {
+  // This tells Next.js to pre-build a temporary placeholder slug 
+  // so the compilation succeeds for a static site.
+  return [{ slug: 'default' }];
+}
