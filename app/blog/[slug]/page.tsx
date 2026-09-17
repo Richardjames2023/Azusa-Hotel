@@ -1,4 +1,5 @@
-export const dynamicParams = true;
+export const dynamic = 'force-static';
+
 
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
