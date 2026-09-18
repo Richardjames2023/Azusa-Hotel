@@ -155,7 +155,7 @@ export const Header: React.FC = () => {
             <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/10">
               <div className="relative w-36 h-10 transition-opacity group-hover:opacity-80">
                 <Image
-                  src="./img/Logo.png"
+                  src="./img/Logo-color.png"
                   alt="Azusa Hotels Logo"
                   fill
                   className="object-contain object-left"
@@ -245,7 +245,7 @@ export const Header: React.FC = () => {
             className="text-[34px] tracking-tight text-[#D4AF37] font-serif font-normal lowercase relative bottom-0.5 select-none block w-36 h-10"
           >
             <Image
-              src="/img/logo-color.png"
+              src="/img/Logo-color.png"
               alt="Azusa Luxury Hotel & Apartments Logo"
               fill
               className="object-contain object-left"
