@@ -16,7 +16,7 @@ jobs:
     - name: Install Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: 18
+        node-version: 22
 
     - name: Install dependencies & Build
       run: |
@@ -24,15 +24,13 @@ jobs:
         npm run build
 
     - name: Sync files to Namecheap
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      uses: SamKirkland/FTP-Deploy-Action@v4.4.0
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftps
         port: 21
-        local-dir: ./dist/
-        server-dir: ./
-        exclude: |
-          **/.git*
-          **/.DS_Store
+        local-dir: ./out/
+        server-dir: /
+        dangerous-clean-slate: true

@@ -160,7 +160,6 @@ export const Header: React.FC = () => {
                   fill
                   className="object-contain object-left"
                   priority
-                  unoptimized 
                 />
               </div>
               <button
