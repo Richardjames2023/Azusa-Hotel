@@ -49,7 +49,7 @@ export const Footer: React.FC = () => {
           <Link href="/" className="inline-block group focus:outline-none">
             <div className="relative w-36 h-12 transition-opacity group-hover:opacity-80">
               <Image
-                src="/img/logo.png"
+                src="./img/logo.png"
                 alt="Azusa Hotels Logo"
                 fill
                 className="object-contain object-left"
