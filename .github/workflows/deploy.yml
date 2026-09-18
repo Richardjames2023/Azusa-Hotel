@@ -32,5 +32,8 @@ jobs:
         protocol: ftps
         port: 21
         local-dir: ./out/
-        # Update this to target your exact correct subdomain folder
         server-dir: ./
+        exclude: |
+          **/._*
+          **/.git*
+          **/.DS_Store
