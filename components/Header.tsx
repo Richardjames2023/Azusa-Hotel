@@ -155,7 +155,7 @@ export const Header: React.FC = () => {
             <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/10">
               <div className="relative w-36 h-10 transition-opacity group-hover:opacity-80">
                 <Image
-                  src="./img/Logo.png"
+                  src="./img/Logo-color.png"
                   alt="Azusa Hotels Logo"
                   fill
                   className="object-contain object-left"
