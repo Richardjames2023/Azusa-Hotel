@@ -33,5 +33,5 @@ jobs:
         port: 21
         local-dir: ./out/
         # Update this to target your exact correct subdomain folder
-        server-dir: ./://azusahotelandapartments.com
+        server-dir: "://azusahotelandapartments.com"
 
