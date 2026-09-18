@@ -32,5 +32,6 @@ jobs:
         protocol: ftps
         port: 21
         local-dir: ./out/
-        server-dir: ./
+        # Update this to target your exact correct subdomain folder
+        server-dir: ./://azusahotelandapartments.com
 
