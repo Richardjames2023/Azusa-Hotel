@@ -1139,6 +1139,9 @@ body {
 .w-full {
   width: 100%;
 }
+.w-\[1px\] {
+  width: 1px;
+}
 .min-w-\[180px\] {
   min-width: 180px;
 }

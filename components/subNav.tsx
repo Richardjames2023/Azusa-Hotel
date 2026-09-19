@@ -15,7 +15,7 @@ export default function SubNav() {
   const subnavItems: SubNavItem[] = [
     { label: "Overview", href: "/" },
     { label: "Rooms", href: "/rooms" },
-    { label: "Services", href: "/services" },
+    // { label: "Services", href: "/services" },
     { label: "Dining", href: "/restaurant" },
     { label: "Meetings & Events", href: "/meetings-events" },
     { label: "Blog", href: "/blog" },
