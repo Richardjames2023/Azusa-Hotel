@@ -4,6 +4,7 @@ export interface HeroCard {
   title: string;
   subtitle?: string; // The '?' means this field is optional
   image: string;
+  cardHref?: string;
 }
 
 export interface HeroSlide {

@@ -421,6 +421,14 @@ export const Header: React.FC = () => {
           </div> */}
           </div>
 
+          {/* BOOK NOW CTA */}
+          <Link
+            href="/rooms"
+            className="bg-[#D4AF37] text-[#4A0A15] px-6 py-2.5 rounded-full text-[11px] font-bold tracking-widest uppercase hover:bg-[#c19d2e] transition-all shadow-sm whitespace-nowrap"
+          >
+            Book Now
+          </Link>
+
           <Link
             href="/signin"
             className="hidden sm:inline-block bg-[#4A0A15] text-white px-6 py-2.5 rounded-full text-[11px] font-bold tracking-widest uppercase hover:bg-[#36070E] transition-all shadow-sm"

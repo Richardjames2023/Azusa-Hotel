@@ -9,6 +9,7 @@
 # Next.js Build Production Deliverables
 /.next/
 /out/
+/dist
 
 # Production Build Logs
 build.log

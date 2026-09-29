@@ -12,19 +12,22 @@
         "id": "card-1",
         "title": "Azusa",
         "subtitle": "Grand Suite",
-        "image": "/img/A2.webp"
+        "image": "/img/A2.webp",
+        "cardHref": "/rooms" 
       },
       {
         "id": "card-2",
         "title": "Azusa",
         "subtitle": "Signature Studio",
-        "image": "/img/A7.webp"
+        "image": "/img/A7.webp",
+        "cardHref": "/rooms" 
       },
       {
         "id": "card-3",
         "title": "Azusa",
         "subtitle": "Deluxe Suite",
-        "image": "/img/MAP13600.webp"
+        "image": "/img/MAP13600.webp",
+        "cardHref": "/rooms" 
       }
     ]
   },
@@ -41,19 +44,22 @@
         "id": "card-4",
         "title": "Azusa",
         "subtitle": "Premier Royal",
-        "image": "/img/MAP13626(1).webp"
+        "image": "/img/MAP13626(1).webp",
+        "cardHref": "/rooms" 
       },
       {
         "id": "card-5",
         "title": "Azusa",
         "subtitle": "Vista Rio",
-        "image": "/img/A13.webp"
+        "image": "/img/A13.webp",
+        "cardHref": "/menu" 
       },
       {
         "id": "card-6",
         "title": "Azusa",
         "subtitle": "Cafe Rio",
-        "image": "/img/A14.webp"
+        "image": "/img/A14.webp",
+        "cardHref": "/restaurant" 
       }
     ]
   }

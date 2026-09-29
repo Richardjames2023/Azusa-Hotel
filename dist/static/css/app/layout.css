@@ -1139,9 +1139,6 @@ body {
 .w-full {
   width: 100%;
 }
-.w-\[1px\] {
-  width: 1px;
-}
 .min-w-\[180px\] {
   min-width: 180px;
 }
@@ -3386,6 +3383,11 @@ body {
 
 .hover\:bg-white\/60:hover {
   background-color: rgb(255 255 255 / 0.6);
+}
+
+.hover\:bg-\[\#c19d2e\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(193 157 46 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:text-\[\#1877F2\]:hover {

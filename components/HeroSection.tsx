@@ -91,8 +91,9 @@ export const HeroSection: React.FC = () => {
           {/* LEFT INTERACTIVE TRACK AREA: absolute cards preview rail slider */}
           <div className="lg:col-span-6 xl:col-span-5 flex items-end space-x-4 h-full pb-8 overflow-visible self-end">
             {activeSlide.cards.map((card, idx) => (
-              <div 
+              <Link 
                 key={card.id}
+                 href={card.cardHref || '#'}
                 className={`w-[140px] md:w-[170px] h-[220px] md:h-[260px] rounded-2xl relative overflow-hidden shadow-xl border border-white/10 flex-shrink-0 group/card cursor-pointer transform transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-2xl hover:border-white/30 ${
                   isAnimating ? 'opacity-0 translate-y-8' : 'opacity-100 translate-y-0'
                 }`}
@@ -116,7 +117,7 @@ export const HeroSection: React.FC = () => {
                     </span>
                   )}
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
