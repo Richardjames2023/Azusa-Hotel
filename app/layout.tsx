@@ -52,6 +52,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Azusa Hotels & Luxury Apartments",
   description: "Experience premium hospitality sanctuary spaces in Abuja.",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
